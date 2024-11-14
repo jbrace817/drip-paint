@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
+import { Montserrat, Lato, Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,6 +13,19 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat-header",
+  weight: ["100", "300", "400", "700", "900"],
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto-body",
+  weight: ["100", "300", "400", "700", "900"],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,10 +35,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} ${roboto.variable} `}>
         {children}
+        <TailwindIndicator />
       </body>
     </html>
   );

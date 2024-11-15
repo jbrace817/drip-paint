@@ -4,7 +4,7 @@ import hero_m from "../../app/assets/hero/hero_m1.jpg";
 import hero_d from "../../app/assets/hero/hero_f_crop.jpg";
 
 function Hero() {
-  const common = { alt: "Art Direction Example", sizes: "100vw" };
+  const common = { alt: "Art Direction", sizes: "100vw" };
   const {
     props: { srcSet: desktop },
   } = getImageProps({
@@ -27,7 +27,7 @@ function Hero() {
   return (
     <section className="relative">
       {/* Image */}
-      <figure className="w-full md:absolute">
+      <figure className="absolute w-full">
         {/* <Image src={hero_m} alt="front of residential home" priority /> */}
         <picture>
           <source media="(min-width: 768px)" srcSet={desktop} />
@@ -35,7 +35,7 @@ function Hero() {
           <img
             {...rest}
             // style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            className="h-auto w-full md:object-cover xl:h-screen"
+            className="h-screen w-full object-cover sm:h-auto xl:h-screen"
             alt="Exterior of residential work"
           />
         </picture>
@@ -43,26 +43,27 @@ function Hero() {
           Example of Drip Painting’s exterior residential work
         </figcaption>
         {/* Overlay */}
-        <div className="md:absolute md:bottom-0 md:left-0 md:right-0 md:top-0 md:z-[2] md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
+        <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
       </figure>
-      <div className="space-y-6 bg-gradient-to-b from-orange-200 to-white p-4 md:absolute md:left-0 md:z-10 md:max-w-xl md:translate-y-[4vw] md:bg-none xl:translate-x-[4vw] 2xl:translate-x-1/4">
-        <h2 className="font-headings text-xl font-bold text-orange-500 md:text-2xl md:font-bold">
-          BRING NEW LIFE TO YOUR SPACE
-        </h2>
-        <h1 className="font-headings max-w-[15em] text-2xl font-bold text-black md:text-3xl md:font-bold">
-          Book Your Free Consultation with Bucks & Montgomery’s Trusted
-          Painters!
-        </h1>
-        <p className="font-body max-w-[20em] text-lg text-stone-700">
-          With over 50 years of experience, Drip Painting transforms homes
-          across Bucks and Montgomery Counties. Our licensed, insured team
-          offers quality work, transparent pricing, and custom finishes.
-          Schedule your free consultation today and bring your vision to life.
-        </p>
+      <div className="absolute left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around md:block md:h-auto md:max-w-xl md:translate-y-[20%] md:space-y-6 md:bg-none 2xl:translate-x-1/4">
+        <div className="space-y-6 pt-10 md:pt-0">
+          <h2 className="font-headings text-xl font-bold text-orange-500 md:font-bold">
+            BRING NEW LIFE TO YOUR SPACE
+          </h2>
+          <h1 className="font-headings max-w-sm text-2xl font-bold text-black md:max-w-md md:font-bold">
+            Book Your Free Consultation with Bucks & Montgomery’s Trusted
+            Painters!
+          </h1>
 
-        {/* Call to Action */}
+          <p className="font-body max-w-sm text-xl text-stone-700 md:text-lg">
+            With over 50 years of experience, Drip Painting transforms homes
+            across Bucks and Montgomery Counties. Our licensed, insured team
+            offers quality work, transparent pricing, and custom finishes.
+            Schedule your free consultation today and bring your vision to life.
+          </p>
+        </div>
         <button
-          className="cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-white transition hover:bg-orange-600"
+          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-white transition hover:bg-orange-600"
           aria-label="Get a free quote from Drip Painting"
         >
           GET A FREE QUOTE

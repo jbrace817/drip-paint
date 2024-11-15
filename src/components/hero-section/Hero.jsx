@@ -45,17 +45,17 @@ function Hero() {
         {/* Overlay */}
         <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
       </figure>
-      <div className="absolute left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around md:block md:h-auto md:max-w-xl md:translate-y-[20%] md:space-y-6 md:bg-none 2xl:translate-x-1/4">
+      <div className="absolute left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around md:block md:h-auto md:max-w-xl md:translate-y-1/4 md:space-y-6 md:bg-none lg:translate-x-1/4 lg:translate-y-1/3 xl:translate-x-1/2 xl:translate-y-1/2">
         <div className="space-y-6 pt-10 md:pt-0">
           <h2 className="font-headings text-xl font-bold text-orange-500 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE
           </h2>
-          <h1 className="font-headings max-w-sm text-2xl font-bold text-black md:max-w-md md:font-bold">
+          <h1 className="font-headings max-w-sm text-2xl font-bold text-black">
             Book Your Free Consultation with Bucks & Montgomery’s Trusted
             Painters!
           </h1>
 
-          <p className="font-body max-w-sm text-xl text-stone-700 md:text-lg">
+          <p className="font-body max-w-sm text-xl font-medium text-stone-700 md:text-lg">
             With over 50 years of experience, Drip Painting transforms homes
             across Bucks and Montgomery Counties. Our licensed, insured team
             offers quality work, transparent pricing, and custom finishes.

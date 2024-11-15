@@ -1,7 +1,8 @@
 import localFont from "next/font/local";
-import { Montserrat, Lato, Open_Sans, Roboto } from "next/font/google";
+import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import Navbar from "@/components/navbar/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,14 +18,14 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-montserrat-header",
-  weight: ["100", "300", "400", "700", "900"],
+  weight: ["100", "300", "400", "500", "700", "800", "900"],
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-roboto-body",
-  weight: ["100", "300", "400", "700", "900"],
+  weight: ["100", "300", "400", "500", "700", "900"],
 });
 
 export const metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${roboto.variable} `}>
+        <Navbar />
         {children}
         <TailwindIndicator />
       </body>

@@ -13,11 +13,8 @@ function MobileNav({ isOpen, setIsOpen }) {
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, setIsOpen]);
 
-  function isActive(path) {
-    return window.location.pathname === path;
-  }
   return (
     <div className="-mt-2 sm:hidden">
       <div className="z-10 sm:hidden">
@@ -66,9 +63,7 @@ function MobileNav({ isOpen, setIsOpen }) {
             onClick={handleNav}
             className="p-4 text-4xl text-gray-50 hover:text-gray-400"
           >
-            <Link href="/" aria-current={isActive("/") ? "home" : undefined}>
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li
             onClick={handleNav}

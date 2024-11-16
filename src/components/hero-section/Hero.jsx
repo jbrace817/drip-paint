@@ -63,7 +63,7 @@ function Hero() {
           </p>
         </div>
         <button
-          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-white transition hover:bg-orange-600"
+          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-orange-950 transition hover:bg-orange-600"
           aria-label="Get a free quote from Drip Painting"
         >
           GET A FREE QUOTE

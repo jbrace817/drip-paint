@@ -29,7 +29,7 @@ function MobileNav({ isOpen, setIsOpen }) {
         >
           <span
             className={`mb-1 block h-0.5 w-8 rounded-sm bg-stone-700 transition-all duration-300 ease-out ${
-              isOpen ? "-mb-1 translate-y-1 rotate-45" : "-translate-y-0.5"
+              isOpen ? "-mb-1 translate-y-2 rotate-45" : "-translate-y-0.5"
             }`}
           ></span>
           <span
@@ -39,7 +39,7 @@ function MobileNav({ isOpen, setIsOpen }) {
           ></span>
           <span
             className={`mt-1 block h-0.5 w-8 rounded-sm bg-stone-700 transition-all duration-300 ease-out ${
-              isOpen ? "-mt-1 -translate-y-1 -rotate-45" : "translate-y-0.5"
+              isOpen ? "-mt-1 -translate-y-2 -rotate-45" : "translate-y-0.5"
             }`}
           ></span>
         </button>

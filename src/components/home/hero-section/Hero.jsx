@@ -25,9 +25,9 @@ function Hero() {
     src: hero_m,
   });
   return (
-    <section className="relative">
+    <section className="relative min-h-screen sm:min-h-fit">
       {/* Image */}
-      <figure className="absolute w-full">
+      <figure className="relative w-full">
         {/* <Image src={hero_m} alt="front of residential home" priority /> */}
         <picture>
           <source media="(min-width: 768px)" srcSet={desktop} />
@@ -45,7 +45,7 @@ function Hero() {
         {/* Overlay */}
         <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
       </figure>
-      <div className="absolute left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around md:block md:h-auto md:max-w-xl md:translate-y-1/4 md:space-y-6 md:bg-none lg:translate-x-1/4 lg:translate-y-1/3 xl:translate-x-1/2 xl:translate-y-1/2">
+      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around sm:h-full md:mt-24 md:block md:h-auto md:max-w-xl md:space-y-6 md:bg-none lg:ml-[8vw] lg:mt-[10vw]">
         <div className="space-y-6 pt-10 md:pt-0">
           <h2 className="font-headings text-xl font-bold text-orange-500 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE

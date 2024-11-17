@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getImageProps } from "next/image";
-import hero_m from "../../app/assets/hero/hero_m1.jpg";
-import hero_d from "../../app/assets/hero/hero_f_crop.jpg";
+import hero_m from "../../../app/assets/home/hero/hero_m1.jpg";
+import hero_d from "../../../app/assets/home/hero/hero_f_crop.jpg";
 
 function Hero() {
   const common = { alt: "Art Direction", sizes: "100vw" };
@@ -50,12 +50,12 @@ function Hero() {
           <h2 className="font-headings text-xl font-bold text-orange-500 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE
           </h2>
-          <h1 className="font-headings max-w-sm text-2xl font-bold text-black">
+          <h1 className="max-w-sm font-headings text-2xl font-bold text-black">
             Book Your Free Consultation with Bucks & Montgomery’s Trusted
             Painters!
           </h1>
 
-          <p className="font-body max-w-sm text-xl font-medium text-stone-700 md:text-lg">
+          <p className="max-w-sm font-body text-xl font-medium text-stone-700 md:text-lg">
             With over 50 years of experience, Drip Painting transforms homes
             across Bucks and Montgomery Counties. Our licensed, insured team
             offers quality work, transparent pricing, and custom finishes.

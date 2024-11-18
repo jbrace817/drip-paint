@@ -45,21 +45,21 @@ function Hero() {
         {/* Overlay */}
         <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
       </figure>
-      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-grow basis-auto flex-col justify-around sm:h-full md:mt-24 md:block md:h-auto md:max-w-xl md:space-y-6 md:bg-none lg:ml-[8vw] lg:mt-[10vw]">
+      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-col justify-around sm:h-full md:mt-[10vw] md:block md:h-auto md:max-w-[80rem] md:space-y-6 md:bg-none lg:mt-[10vw] xl:mx-auto xl:pl-4">
         <div className="space-y-6 pt-10 md:pt-0">
-          <h2 className="font-headings text-xl font-bold text-orange-500 md:font-bold">
+          <h2 className="font-headings text-xl font-bold text-orange-600 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE
           </h2>
-          <h1 className="max-w-sm font-headings text-2xl font-bold text-black">
+          <h1 className="max-w-sm font-headings text-3xl font-bold text-black">
             Book Your Free Consultation with Bucks & Montgomery’s Trusted
             Painters!
           </h1>
 
-          <p className="max-w-sm font-body text-xl font-medium text-stone-700 md:text-lg">
-            With over 50 years of experience, Drip Painting transforms homes
-            across Bucks and Montgomery Counties. Our licensed, insured team
-            offers quality work, transparent pricing, and custom finishes.
-            Schedule your free consultation today and bring your vision to life.
+          <p className="max-w-md font-body text-lg font-medium text-stone-700 md:text-lg">
+            Drip Painting transforms homes in Bucks and Montgomery Counties with
+            quality work, custom finishes, and transparent pricing. Our licensed
+            and insured team is ready to bring your vision to life. Schedule
+            your free consultation today!
           </p>
         </div>
         <button

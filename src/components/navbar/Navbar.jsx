@@ -35,7 +35,7 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-20 w-full transition duration-300 ${
+      className={`fixed left-0 top-0 z-[100] w-full transition duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       } ${isTop ? "bg-transparent" : "bg-white/60 backdrop-blur-md"}`}
     >

@@ -35,7 +35,7 @@ function Hero() {
           <img
             {...rest}
             // style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            className="h-screen w-full object-cover sm:h-auto xl:h-screen"
+            className="h-screen w-full object-cover"
             alt="Exterior of residential work"
           />
         </picture>
@@ -43,9 +43,9 @@ function Hero() {
           Example of Drip Painting’s exterior residential work
         </figcaption>
         {/* Overlay */}
-        <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-30% md:to-transparent md:to-60%" />
+        <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-25% md:to-transparent md:to-70% lg:to-60%" />
       </figure>
-      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-col justify-around sm:h-full md:mt-[10vw] md:block md:h-auto md:max-w-[80rem] md:space-y-6 md:bg-none lg:mt-[10vw] xl:mx-auto xl:pl-4">
+      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-col justify-around sm:h-full md:mt-[14vw] md:max-w-[80rem] md:justify-start md:space-y-6 md:bg-none xl:mx-auto xl:mt-[10vw] xl:block xl:pl-4">
         <div className="space-y-6 pt-10 md:pt-0">
           <h2 className="font-headings text-xl font-bold text-orange-600 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE

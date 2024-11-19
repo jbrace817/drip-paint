@@ -35,7 +35,7 @@ function Hero() {
           <img
             {...rest}
             // style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            className="h-screen w-full object-cover"
+            className="tallOrWideAndLandscape:h-auto h-screen w-full object-cover"
             alt="Exterior of residential work"
           />
         </picture>

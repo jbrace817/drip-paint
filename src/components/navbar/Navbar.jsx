@@ -13,20 +13,19 @@ function Navbar() {
   const [prevScroll, setPrevScroll] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
+    const SCROLL_THRESHOLD = 10; // Adjust based on sensitivity
 
-      // Check if we're at the top of the screen
+    const handleScroll = () => {
+      const currentScroll = Math.max(0, Math.round(window.scrollY));
+
+      // Check if at the top of the screen
       setIsTop(currentScroll === 0);
 
-      // Show or hide the navbar based on scroll direction
-      if (currentScroll > prevScroll) {
-        setIsVisible(false); // Hide navbar on scroll down
-      } else {
-        setIsVisible(true); // Show navbar on scroll up
+      // Toggle visibility only if the scroll difference exceeds the threshold
+      if (Math.abs(currentScroll - prevScroll) > SCROLL_THRESHOLD) {
+        setIsVisible(currentScroll < prevScroll || currentScroll === 0);
+        setPrevScroll(currentScroll);
       }
-
-      setPrevScroll(currentScroll);
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -1,9 +1,9 @@
-"use client";
 import Image from "next/image";
 import front from "../../../app/assets/home/about/aboutUsFront_m.jpeg";
 import back from "../../../app/assets/home/about/aboutUsBack_m.jpeg";
-import { Fade } from "react-awesome-reveal";
+
 import SectionInfo from "@/components/SectionInfo";
+import ConditionalAnimation from "@/utils/ConditionalAnimation";
 function AboutUs() {
   return (
     <section className="space-y-6 bg-gradient-to-b from-orange-200 from-5% to-white to-70% px-4 py-16">
@@ -25,22 +25,22 @@ function AboutUs() {
         </SectionInfo>
 
         <div className="relative grid grid-cols-12 self-center md:max-w-[50%]">
-          <Fade
-            direction="right"
+          <ConditionalAnimation
+            animate={true}
+            direction={"right"}
+            cascade={true}
             className="relative z-10 col-start-1 col-end-9 row-start-1 row-end-4 lg:-mt-8"
-            triggerOnce
-            fraction={1}
           >
             <Image src={back} alt="Painters at work"></Image>
-          </Fade>
-          <Fade
-            direction="right"
+          </ConditionalAnimation>
+          <ConditionalAnimation
+            animate={true}
+            direction={"right"}
+            cascade={true}
             className="relative z-20 col-start-5 col-end-13 row-start-3 row-end-6"
-            triggerOnce
-            fraction={1}
           >
             <Image src={front} alt="Painters looking at blueprint"></Image>
-          </Fade>
+          </ConditionalAnimation>
         </div>
       </div>
     </section>

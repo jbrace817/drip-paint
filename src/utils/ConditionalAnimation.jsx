@@ -6,9 +6,16 @@ function ConditionalAnimation({
   animate = false,
   cascade = false,
   direction,
+  className = "",
 }) {
   return animate ? (
-    <Fade cascade={cascade} direction={direction} triggerOnce fraction={1}>
+    <Fade
+      cascade={cascade}
+      direction={direction}
+      triggerOnce
+      fraction={1}
+      className={`${className}`}
+    >
       {children}
     </Fade>
   ) : (

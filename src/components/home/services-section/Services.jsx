@@ -1,4 +1,8 @@
 import SectionInfo from "@/components/SectionInfo";
+import Image, { getImageProps } from "next/image";
+import exterior_m from "../../../app/assets/home/servicesImg/exterior_m.jpeg";
+import staircase_m from "../../../app/assets/home/servicesImg/stairCase_m.jpeg";
+import interior_m from "../../../app/assets/home/servicesImg/interior_m.jpeg";
 
 function Services() {
   return (
@@ -17,26 +21,37 @@ function Services() {
           every time.
         </SectionInfo>
         <button
-          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-orange-950 transition hover:bg-orange-600"
+          className="mb-16 cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-orange-950 transition hover:bg-orange-600"
           aria-label="View Gallery of Drip's work"
         >
           View Gallery
         </button>
-        <picture>
-          <source></source>
-          <source></source>
-          <img></img>
-        </picture>
-        <picture>
-          <source></source>
-          <source></source>
-          <img></img>
-        </picture>
-        <picture>
-          <source></source>
-          <source></source>
-          <img></img>
-        </picture>
+        <div className="flex flex-col gap-4">
+          <div className="relative h-[60vw] w-full">
+            <Image
+              src={exterior_m}
+              alt="Painted exterior of residence"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div className="relative h-[60vw] w-full">
+            <Image
+              src={interior_m}
+              alt="Painted exterior of residence"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div className="relative h-[60vw] w-full">
+            <Image
+              src={staircase_m}
+              alt="Painted exterior of residence"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -7,11 +7,13 @@ function ConditionalAnimation({
   cascade = false,
   direction,
   className = "",
+  delay = 0,
 }) {
   return animate ? (
     <Fade
       cascade={cascade}
       direction={direction}
+      delay={delay}
       triggerOnce
       fraction={1}
       className={`${className}`}

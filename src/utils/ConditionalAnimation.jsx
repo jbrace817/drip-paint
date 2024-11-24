@@ -8,6 +8,7 @@ function ConditionalAnimation({
   direction,
   className = "",
   delay = 0,
+  fraction = 0,
 }) {
   return animate ? (
     <Fade
@@ -15,7 +16,8 @@ function ConditionalAnimation({
       direction={direction}
       delay={delay}
       triggerOnce
-      fraction={1}
+      key={`${direction}-${delay}`}
+      fraction={fraction}
       className={`${className}`}
     >
       {children}

@@ -6,7 +6,7 @@ import SectionInfo from "@/components/SectionInfo";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";
 function AboutUs() {
   return (
-    <section className="space-y-6 bg-gradient-to-b from-orange-200 from-5% to-white to-70% px-4 py-16">
+    <section className="space-y-6 overflow-hidden bg-gradient-to-b from-orange-200 from-5% to-white to-70% px-4 py-16">
       <div className="m-auto max-w-[80rem] gap-6 space-y-6 md:flex md:justify-between md:space-y-0">
         <SectionInfo
           header1={"WHO WE ARE"}

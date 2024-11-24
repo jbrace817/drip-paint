@@ -3,6 +3,7 @@ import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.variable} ${roboto.variable} `}>
         <Navbar />
         {children}
+        <Footer />
         <TailwindIndicator />
       </body>
     </html>

@@ -20,7 +20,7 @@ function Services() {
             textColor="text-white"
             animate={true}
             cascade={true}
-            direction={width >= 768 ? "right" : "left"}
+            direction={width >= 640 ? "right" : "left"}
           >
             <p className="pb-8">
               At Drip Painting, we specialize in bringing homes to life with
@@ -41,11 +41,11 @@ function Services() {
         <div className="flex flex-col gap-4 md:w-[50%] md:flex-row">
           <ConditionalAnimation
             animate={true}
-            direction={width >= 768 ? "left" : "right"}
-            delay={width >= 768 && 500}
+            direction={width >= 640 ? "left" : "right"}
+            delay={width >= 640 ? 500 : 0}
             className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
           >
-            <div>
+            <div className="relative h-full w-full">
               {/* Overlay */}
               <div className="absolute inset-0 z-10 h-full w-full bg-orange-100/30" />
               <p className="absolute left-2 top-4 z-20 font-headings text-xl font-bold text-neutral-800">
@@ -56,16 +56,17 @@ function Services() {
                 alt="Painted exterior of residence"
                 fill
                 className="object-cover object-top md:object-center"
+                sizes="(max-width: 768px) 100%"
               />
             </div>
           </ConditionalAnimation>
           <ConditionalAnimation
             animate={true}
             direction={"left"}
-            delay={width >= 768 && 250}
+            delay={width >= 640 ? 250 : 0}
             className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
           >
-            <div>
+            <div className="relative h-full w-full">
               {/* Overlay */}
               <div className="absolute inset-0 z-10 h-full w-full bg-orange-100/30" />
               <p className="absolute left-2 top-4 z-20 font-headings text-xl font-bold text-neutral-800">
@@ -76,25 +77,27 @@ function Services() {
                 alt="Beautifully painted interior room"
                 fill
                 className="object-cover object-center"
+                sizes="(max-width: 768px) 100%"
               />
             </div>
           </ConditionalAnimation>
           <ConditionalAnimation
             animate={true}
-            direction={width >= 768 ? "left" : "right"}
+            direction={width >= 640 ? "left" : "right"}
             className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
           >
-            <div className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]">
+            <div className="relative h-full w-full">
               {/* Overlay */}
               <div className="absolute inset-0 z-10 h-full w-full bg-orange-100/30" />
               <p className="absolute left-2 top-4 z-20 font-headings text-xl font-bold text-neutral-800">
-                Custom Finishes & Details
+                Custom Finishes
               </p>
               <Image
                 src={staircase_m}
                 alt="Painted exterior of residence"
                 fill
                 className="object-cover object-top md:object-center"
+                sizes="(max-width: 768px) 100%"
               />
             </div>
           </ConditionalAnimation>

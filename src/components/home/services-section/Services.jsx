@@ -11,7 +11,7 @@ function Services() {
   const { width } = useViewport();
 
   return (
-    <section className="overflow-hidden bg-stone-800 px-4 py-16">
+    <section className="overflow-hidden bg-stone-900 px-4 py-16">
       <div className="m-auto max-w-[80rem] md:flex md:flex-row-reverse md:justify-between md:gap-6">
         <div>
           <SectionInfo

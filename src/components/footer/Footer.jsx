@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-stone-800">
+    <footer className="bg-stone-900">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt

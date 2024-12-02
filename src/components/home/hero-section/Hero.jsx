@@ -35,7 +35,7 @@ function Hero() {
           <img
             {...rest}
             // style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            className="tallOrWideAndLandscape:h-auto h-screen w-full object-cover"
+            className="h-screen w-full object-cover tallOrWideAndLandscape:h-auto"
             alt="Exterior of residential work"
           />
         </picture>
@@ -50,7 +50,7 @@ function Hero() {
           <h2 className="font-headings text-xl font-bold text-orange-600 md:font-bold">
             BRING NEW LIFE TO YOUR SPACE
           </h2>
-          <h1 className="max-w-sm font-headings text-3xl font-bold text-black">
+          <h1 className="max-w-sm font-headings text-4xl font-bold text-black">
             Book Your Free Consultation with Bucks & Montgomery’s Trusted
             Painters!
           </h1>
@@ -63,7 +63,7 @@ function Hero() {
           </p>
         </div>
         <button
-          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-orange-950 transition hover:bg-orange-600"
+          className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
           aria-label="Get a free quote from Drip Painting"
         >
           GET A FREE QUOTE

@@ -31,7 +31,7 @@ function Services() {
               long-lasting results every time.
             </p>
             <button
-              className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-base font-bold text-orange-950 transition hover:bg-orange-600"
+              className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-lg font-bold text-orange-950 transition hover:bg-orange-600"
               aria-label="View Gallery of Drip's work"
             >
               View Gallery

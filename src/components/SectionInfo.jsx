@@ -8,6 +8,8 @@ function SectionInfo({
   animate,
   cascade,
   direction,
+  textAlign = "",
+  textWidth = "",
 }) {
   return (
     <article>
@@ -17,17 +19,21 @@ function SectionInfo({
           cascade={cascade}
           direction={direction}
         >
-          <h2 className="font-headings text-sm font-bold text-orange-600">
+          <h2
+            className={`font-headings text-xl font-bold text-orange-600 ${textAlign}`}
+          >
             {header1}
           </h2>
-          <h3 className={`font-headings text-3xl font-bold ${textColor}`}>
+          <h3
+            className={`font-headings text-4xl font-bold ${textColor} ${textAlign}`}
+          >
             {header2}
           </h3>
         </ConditionalAnimation>
       </header>
 
       <div
-        className={`pb-8 font-body text-lg ${textColor} md:max-w-sm lg:max-w-md`}
+        className={`pb-8 font-body text-lg ${textColor} mx-auto ${textAlign} ${textWidth ? textWidth : "md:max-w-sm lg:max-w-md"}`}
       >
         <ConditionalAnimation
           animate={animate}

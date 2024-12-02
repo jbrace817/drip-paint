@@ -5,12 +5,9 @@ import { FaSearchDollar } from "react-icons/fa";
 
 function ChooseUs() {
   return (
-    <div
-      style={{ minHeight: "100vh" }}
-      className="relative flex flex-col bg-white px-4 py-16 font-sans sm:px-6 lg:px-8"
-    >
-      <div className="flex-1 space-y-6">
-        <div className="sticky top-[calc(1rem*1)] mx-auto w-full max-w-md space-y-6 rounded-xl border bg-white px-8 py-12 shadow-lg">
+    <div className="relative flex min-h-screen flex-col bg-white px-4 py-16 font-sans sm:px-6 md:min-h-fit lg:px-8">
+      <div className="grid justify-center gap-6 sm:gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-6 2xl:grid-cols-4">
+        <div className="sticky top-[calc(1rem*1)] w-full max-w-md space-y-6 justify-self-end rounded-xl border bg-white px-8 py-12 shadow-lg md:static">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <IoShieldHalf color="#ea580c" size={"32px"} />
           </div>
@@ -22,13 +19,14 @@ function ChooseUs() {
             </span>
           </h2>
           <p className="font-body text-lg text-gray-700">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-            perspiciatis blanditiis accusamus commodi consectetur id tempora rem
-            iure eligendi quos eos et autem ratione exercitationem earum laborum
-            ad a sequi!
+            At Drip Painting, your peace of mind is our priority. As a fully
+            licensed and insured painting company, we ensure every project is
+            completed to professional standards while protecting your property
+            and investment. Trust our team for reliable, worry-free service
+            backed by over 50 years of expertise
           </p>
         </div>
-        <div className="sticky top-[calc(1rem*2)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
+        <div className="sticky top-[calc(1rem*2)] w-full max-w-md space-y-4 justify-self-start rounded-xl border bg-white px-8 py-12 shadow-lg md:static">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <IoMdCheckboxOutline color="#ea580c" size={"32px"} />
           </div>
@@ -40,13 +38,14 @@ function ChooseUs() {
             </span>
           </h2>
           <p className="font-body text-lg text-gray-700">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-            perspiciatis blanditiis accusamus commodi consectetur id tempora rem
-            iure eligendi quos eos et autem ratione exercitationem earum laborum
-            ad a sequi!
+            Your satisfaction is our guarantee. At Drip Painting, we go above
+            and beyond to ensure you’re thrilled with the results. From the
+            first brushstroke to the final detail, our commitment to excellence
+            means we don’t rest until you’re 100% satisfied with your space’s
+            transformation.
           </p>
         </div>
-        <div className="sticky top-[calc(1rem*3)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
+        <div className="sticky top-[calc(1rem*3)] w-full max-w-md space-y-4 justify-self-end rounded-xl border bg-white px-8 py-12 shadow-lg md:static">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <LuCalendarClock color="#ea580c" size={"32px"} />
           </div>
@@ -58,13 +57,13 @@ function ChooseUs() {
             </span>
           </h2>
           <p className="font-body text-lg text-gray-700">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-            perspiciatis blanditiis accusamus commodi consectetur id tempora rem
-            iure eligendi quos eos et autem ratione exercitationem earum laborum
-            ad a sequi!
+            We understand that life can be busy, which is why Drip Painting
+            offers flexible scheduling to fit your needs. Whether it&apos;s
+            weekdays, weekends, or after hours, we work around your timeline to
+            ensure a seamless and stress-free painting experience
           </p>
         </div>
-        <div className="sticky top-[calc(1rem*4)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
+        <div className="sticky top-[calc(1rem*4)] w-full max-w-md space-y-4 justify-self-start rounded-xl border bg-white px-8 py-12 shadow-lg md:static">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <FaSearchDollar color="#ea580c" size={"32px"} />
           </div>
@@ -76,10 +75,10 @@ function ChooseUs() {
             </span>
           </h2>
           <p className="font-body text-lg text-gray-700">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-            perspiciatis blanditiis accusamus commodi consectetur id tempora rem
-            iure eligendi quos eos et autem ratione exercitationem earum laborum
-            ad a sequi!
+            With Drip Painting, you’ll never have to worry about hidden fees or
+            surprise costs. Our transparent pricing ensures you know exactly
+            what to expect from the start, providing clear, detailed estimates
+            and delivering exceptional value every step of the way.
           </p>
         </div>
       </div>

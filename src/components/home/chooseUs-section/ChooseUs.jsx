@@ -10,10 +10,7 @@ function ChooseUs() {
       className="relative flex flex-col bg-white px-4 py-16 font-sans sm:px-6 lg:px-8"
     >
       <div className="flex-1 space-y-6">
-        <div
-          style={{ top: "calc(1rem * 1)" }}
-          className="sticky mx-auto w-full max-w-md space-y-6 rounded-xl border bg-white px-8 py-12 shadow-lg"
-        >
+        <div className="sticky top-[calc(1rem*1)] mx-auto w-full max-w-md space-y-6 rounded-xl border bg-white px-8 py-12 shadow-lg">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <IoShieldHalf color="#ea580c" size={"32px"} />
           </div>
@@ -31,10 +28,7 @@ function ChooseUs() {
             ad a sequi!
           </p>
         </div>
-        <div
-          style={{ top: "calc(1rem * 2)" }}
-          className="sticky mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg"
-        >
+        <div className="sticky top-[calc(1rem*2)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <IoMdCheckboxOutline color="#ea580c" size={"32px"} />
           </div>
@@ -52,10 +46,7 @@ function ChooseUs() {
             ad a sequi!
           </p>
         </div>
-        <div
-          style={{ top: "calc(1rem * 3)" }}
-          className="sticky mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg"
-        >
+        <div className="sticky top-[calc(1rem*3)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <LuCalendarClock color="#ea580c" size={"32px"} />
           </div>
@@ -73,10 +64,7 @@ function ChooseUs() {
             ad a sequi!
           </p>
         </div>
-        <div
-          style={{ top: "calc(1rem * 4)" }}
-          className="sticky mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg"
-        >
+        <div className="sticky top-[calc(1rem*4)] mx-auto w-full max-w-md space-y-4 rounded-xl border bg-white px-8 py-12 shadow-lg">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <FaSearchDollar color="#ea580c" size={"32px"} />
           </div>

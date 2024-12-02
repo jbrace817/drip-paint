@@ -2,11 +2,24 @@ import { IoShieldHalf } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { LuCalendarClock } from "react-icons/lu";
 import { FaSearchDollar } from "react-icons/fa";
+import SectionInfo from "@/components/SectionInfo";
 
 function ChooseUs() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-white px-4 py-16 font-sans sm:px-6 md:min-h-fit lg:px-8">
-      <div className="grid justify-center gap-6 sm:gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-6 2xl:grid-cols-4">
+    <section className="relative flex min-h-screen flex-col bg-white px-4 py-16 font-sans sm:px-6 md:min-h-fit lg:px-8">
+      <SectionInfo
+        header1={"WHY CHOOSE US"}
+        header2={"Excellence You Can Trust, Results You'll Love"}
+        animate={false}
+        cascade={false}
+        direction={"left"}
+        textAlign="md:text-center"
+        textWidth="max-w-2xl"
+      >
+        With 15+ years of experience, Drip Painting delivers expert
+        craftsmanship, quality materials, and exceptional service you can trust.
+      </SectionInfo>
+      <div className="grid justify-center gap-6 pb-8 sm:gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-6 2xl:grid-cols-4">
         <div className="sticky top-[calc(1rem*1)] w-full max-w-md space-y-6 justify-self-end rounded-xl border bg-white px-8 py-12 shadow-lg md:static">
           <div className="w-fit rounded-xl bg-orange-100 p-3">
             <IoShieldHalf color="#ea580c" size={"32px"} />
@@ -82,7 +95,13 @@ function ChooseUs() {
           </p>
         </div>
       </div>
-    </div>
+      <button
+        className="mx-auto cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
+        aria-label="View Gallery of Drip's work"
+      >
+        GET A FREE QUOTE
+      </button>
+    </section>
   );
 }
 

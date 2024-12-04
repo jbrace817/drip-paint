@@ -28,9 +28,12 @@ function Navbar() {
       }
     };
 
+    // Disables scroll when mobile menu is open
+    document.body.style.overflow = `${isOpen ? "hidden" : "visible"}`;
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScroll]);
+  }, [prevScroll, isOpen]);
 
   return (
     <header

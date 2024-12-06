@@ -43,9 +43,9 @@ function ChooseUs() {
         <SectionInfo
           header1={"WHY CHOOSE US"}
           header2={"Excellence You Can Trust, Results You'll Love"}
-          animate={false}
-          cascade={false}
-          direction={"left"}
+          animate={true}
+          cascade={true}
+          direction={"up"}
           textAlign="md:text-center"
           textWidth="max-w-2xl"
         >

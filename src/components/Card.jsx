@@ -9,10 +9,10 @@ function Card({ icon, title, description, index, align }) {
 
         <span className="block font-headings text-3xl">{title}</span>
       </h2> */}
-      <h2 className="block space-y-1 font-headings text-3xl font-bold">
+      <h2 className="block space-y-1 font-headings text-2xl font-semibold">
         {title}
       </h2>
-      <p className="font-body text-lg text-gray-700">{description}</p>
+      <p className="font-body text-base text-gray-700">{description}</p>
     </div>
   );
 }

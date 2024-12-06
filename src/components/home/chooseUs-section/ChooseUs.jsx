@@ -38,37 +38,40 @@ const cardContents = [
 
 function ChooseUs() {
   return (
-    <section className="relative flex min-h-screen flex-col bg-white px-4 py-16 font-sans sm:px-6 md:min-h-fit lg:px-8">
-      <SectionInfo
-        header1={"WHY CHOOSE US"}
-        header2={"Excellence You Can Trust, Results You'll Love"}
-        animate={false}
-        cascade={false}
-        direction={"left"}
-        textAlign="md:text-center"
-        textWidth="max-w-2xl"
-      >
-        With 15+ years of experience, Drip Painting delivers expert
-        craftsmanship, quality materials, and exceptional service you can trust.
-      </SectionInfo>
-      <div className="grid justify-center gap-6 sm:gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-6 2xl:grid-cols-4">
-        {cardContents.map((content, index) => (
-          <Card
-            key={content.title}
-            icon={content.icon}
-            title={content.title}
-            description={content.description}
-            index={index}
-            align={content.align}
-          />
-        ))}
+    <section>
+      <div className="relative mx-auto flex min-h-screen max-w-[80rem] flex-col items-center bg-white px-4 py-16 font-sans md:min-h-fit">
+        <SectionInfo
+          header1={"WHY CHOOSE US"}
+          header2={"Excellence You Can Trust, Results You'll Love"}
+          animate={false}
+          cascade={false}
+          direction={"left"}
+          textAlign="md:text-center"
+          textWidth="max-w-2xl"
+        >
+          With 15+ years of experience, Drip Painting delivers expert
+          craftsmanship, quality materials, and exceptional service you can
+          trust.
+        </SectionInfo>
+        <div className="grid justify-center gap-6 sm:gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-6">
+          {cardContents.map((content, index) => (
+            <Card
+              key={content.title}
+              icon={content.icon}
+              title={content.title}
+              description={content.description}
+              index={index}
+              align={content.align}
+            />
+          ))}
+        </div>
+        <button
+          className="mx-auto mt-16 cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
+          aria-label="View Gallery of Drip's work"
+        >
+          GET A FREE QUOTE
+        </button>
       </div>
-      <button
-        className="mx-auto mt-16 cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
-        aria-label="View Gallery of Drip's work"
-      >
-        GET A FREE QUOTE
-      </button>
     </section>
   );
 }

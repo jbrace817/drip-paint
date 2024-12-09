@@ -1,7 +1,8 @@
 function Card({ icon, title, description, index, align }) {
   return (
     <div
-      className={`sticky top-[calc(1rem*${index + 1})] w-full max-w-md space-y-6 ${align} rounded-xl border bg-white px-8 py-12 shadow-lg md:static`}
+      style={{ top: `calc(1rem*${index + 1})` }}
+      className={`sticky w-full max-w-md space-y-6 ${align} rounded-xl border bg-white px-8 py-12 shadow-lg md:static`}
     >
       <div className="w-fit rounded-xl bg-orange-100 p-3">{icon}</div>
       {/* <h2 className="space-y-1 text-2xl font-bold leading-none">

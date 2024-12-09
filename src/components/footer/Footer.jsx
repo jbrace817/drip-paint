@@ -1,38 +1,35 @@
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import FootLogo from "../../app/assets/footer/logo_white.svg";
+
 function Footer() {
   return (
     <footer className="bg-stone-900">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-          consequuntur amet culpa cum itaque neque.
-        </p>
+        <div>
+          <Link href="/" aria-label="Home">
+            <Image
+              src={FootLogo}
+              width={0}
+              unoptimized
+              className="mx-auto w-60"
+              alt="Drip Company Logo"
+            />
+          </Link>
+        </div>
 
-        <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-              href="#"
-            >
-              About
-            </a>
+        <ul className="mt-12 flex flex-wrap justify-center gap-6 font-body md:gap-8 lg:gap-12">
+          <li className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+            <Link href={"/about"}>About Us</Link>
           </li>
 
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-              href="#"
-            >
-              Careers
-            </a>
+          <li className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+            <Link href={"/services"}>Services</Link>
           </li>
 
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-              href="#"
-            >
-              History
-            </a>
+          <li className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+            <Link href={"/projects"}>Projects</Link>
           </li>
 
           <li>
@@ -44,22 +41,8 @@ function Footer() {
             </a>
           </li>
 
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-              href="#"
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-              href="#"
-            >
-              Blog
-            </a>
+          <li className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+            <Link href={"/contact"}>Contact Us</Link>
           </li>
         </ul>
 
@@ -131,6 +114,10 @@ function Footer() {
             </a>
           </li>
         </ul>
+
+        <p className="mt-8 text-center text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+          &#xA9;2024 Drip Painting LLC
+        </p>
       </div>
     </footer>
   );

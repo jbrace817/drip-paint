@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getImageProps } from "next/image";
-import hero_m from "../../../app/assets/home/hero/hero_m1.jpg";
-import hero_d from "../../../app/assets/home/hero/hero_f_crop.jpg";
+import hero_m from "../../../../public/assets/home/hero/hero_m.webp";
+import hero_d from "../../../../public/assets/home/hero/hero_d.webp";
 
 function Hero() {
   const common = { alt: "Art Direction", sizes: "100vw" };

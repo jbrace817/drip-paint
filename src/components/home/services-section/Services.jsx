@@ -1,9 +1,9 @@
 "use client";
 import SectionInfo from "@/components/SectionInfo";
 import Image, { getImageProps } from "next/image";
-import exterior_m from "../../../app/assets/home/servicesImg/exterior_m.jpeg";
-import staircase_m from "../../../app/assets/home/servicesImg/stairCase_m.jpeg";
-import interior_m from "../../../app/assets/home/servicesImg/interior_m.jpeg";
+import exterior from "../../../../public/assets/home/services/exterior.webp";
+import staircase from "../../../../public/assets/home/services/staircase.webp";
+import interior from "../../../../public/assets/home/services/interior.webp";
 import useViewport from "@/hooks/useViewport";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";
 
@@ -52,11 +52,11 @@ function Services() {
                 Exteriors
               </p>
               <Image
-                src={exterior_m}
+                src={exterior}
                 alt="Painted exterior of residence"
                 fill
                 className="object-cover object-top md:object-center"
-                sizes="(max-width: 768px) 100%"
+                sizes="107.5vw"
               />
             </div>
           </ConditionalAnimation>
@@ -73,11 +73,11 @@ function Services() {
                 Interiors
               </p>
               <Image
-                src={interior_m}
+                src={interior}
                 alt="Beautifully painted interior room"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100%"
+                sizes="calc(100vw - 32px)"
               />
             </div>
           </ConditionalAnimation>
@@ -93,11 +93,11 @@ function Services() {
                 Custom Finishes
               </p>
               <Image
-                src={staircase_m}
+                src={staircase}
                 alt="Painted exterior of residence"
                 fill
                 className="object-cover object-top md:object-center"
-                sizes="(max-width: 768px) 100%"
+                sizes="calc(100vw - 32px)"
               />
             </div>
           </ConditionalAnimation>

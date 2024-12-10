@@ -5,21 +5,12 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-montserrat-header",
   weight: ["100", "300", "400", "500", "700", "800", "900"],
+  preload: true,
 });
 
 const roboto = Roboto({
@@ -27,6 +18,7 @@ const roboto = Roboto({
   display: "swap",
   variable: "--font-roboto-body",
   weight: ["100", "300", "400", "500", "700", "900"],
+  preload: true,
 });
 
 export const metadata = {

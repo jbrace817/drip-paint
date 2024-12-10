@@ -1,9 +1,9 @@
 "use client";
 import SectionInfo from "@/components/SectionInfo";
 import Image, { getImageProps } from "next/image";
-import exterior from "../../../../public/assets/home/services/exterior.webp";
-import staircase from "../../../../public/assets/home/services/staircase.webp";
-import interior from "../../../../public/assets/home/services/interior.webp";
+import exterior from "../../../../public/assets/home/dripServices/exterior.webp";
+import staircase from "../../../../public/assets/home/dripServices/staircase.webp";
+import interior from "../../../../public/assets/home/dripServices/interior.webp";
 import useViewport from "@/hooks/useViewport";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";
 

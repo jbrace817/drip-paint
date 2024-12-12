@@ -125,58 +125,54 @@ function HomeGallery() {
 
   return (
     <section>
-      <SectionInfo
-        header1={"Gallery"}
-        header2={"Vivid Visions: Our Work Speaks for Itself"}
-        animate={true}
-        cascade={true}
-        direction={"up"}
-        textAlign="md:text-center"
-        textWidth="max-w-2xl"
-      >
-        Discover the artistry that sets Drip Painting apart. With over 15 years
-        of experience, we bring spaces to life through stunning interior
-        transformations, bold exterior makeovers, and custom finishes tailored
-        to your vision. From enhancing curb appeal to creating warm, inviting
-        interiors, our work showcases the care and precision we bring to every
-        project. Explore our gallery and see how we’ve made an impact across the
-        Doylestown, PA area—your dream space starts here.
-      </SectionInfo>
       {/* Buttons */}
-      <div className="mx-auto flex max-w-[80rem] flex-wrap items-center justify-center py-4 md:py-8">
-        <button
-          type="button"
-          className={`mb-3 me-3 rounded-full border border-orange-950 px-5 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
-            category === "exterior"
-              ? "bg-orange-100 outline-none ring-4 ring-orange-300"
-              : "bg-white"
-          }`}
-          onClick={() => handleClick("exterior")}
-        >
-          Exterior
-        </button>
-        <button
-          type="button"
-          className={`mb-3 me-3 rounded-full border border-orange-950 px-5 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
-            category === "interior"
-              ? "bg-orange-100 outline-none ring-4 ring-orange-300"
-              : "bg-white"
-          }`}
-          onClick={() => handleClick("interior")}
-        >
-          Interior
-        </button>
-        <button
-          type="button"
-          className={`mb-3 me-3 rounded-full border border-orange-950 px-5 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
-            category === "custom"
-              ? "bg-orange-100 outline-none ring-4 ring-orange-300"
-              : "bg-white"
-          }`}
-          onClick={() => handleClick("custom")}
-        >
-          Custom Spaces
-        </button>
+      <div className="mx-auto flex max-w-[80rem] flex-wrap items-end px-4 py-4 md:py-8 lg:justify-between">
+        <div className="md:w-full lg:max-w-lg">
+          <SectionInfo
+            header1={"Gallery"}
+            header2={"Our Work Speaks for Itself"}
+            animate={true}
+            cascade={true}
+            direction={"up"}
+            textAlign="text-left md:text-center lg:text-left "
+            textWidth="max-w-full"
+          ></SectionInfo>
+        </div>
+        <div className="mx-auto flex flex-wrap justify-center pb-8 lg:mx-0">
+          <button
+            type="button"
+            className={`mb-3 me-3 rounded-full border border-orange-950 px-4 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
+              category === "exterior"
+                ? "bg-orange-100 outline-none ring-4 ring-orange-300"
+                : "bg-white"
+            }`}
+            onClick={() => handleClick("exterior")}
+          >
+            Exterior
+          </button>
+          <button
+            type="button"
+            className={`mb-3 me-3 rounded-full border border-orange-950 px-4 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
+              category === "interior"
+                ? "bg-orange-100 outline-none ring-4 ring-orange-300"
+                : "bg-white"
+            }`}
+            onClick={() => handleClick("interior")}
+          >
+            Interior
+          </button>
+          <button
+            type="button"
+            className={`mb-3 me-3 rounded-full border border-orange-950 px-4 py-2.5 text-center font-body text-base font-medium text-orange-950 transition ${
+              category === "custom"
+                ? "bg-orange-100 outline-none ring-4 ring-orange-300"
+                : "bg-white"
+            }`}
+            onClick={() => handleClick("custom")}
+          >
+            Custom Spaces
+          </button>
+        </div>
       </div>
 
       {/* Photo Container */}
@@ -210,6 +206,14 @@ function HomeGallery() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="mx-auto mb-16 flex max-w-[80rem] justify-center">
+        <button
+          className="mx-auto mt-16 cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
+          aria-label="View Gallery of Drip's work"
+        >
+          GET A FREE QUOTE
+        </button>
       </div>
     </section>
   );

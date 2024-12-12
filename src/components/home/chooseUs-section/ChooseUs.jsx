@@ -65,12 +65,6 @@ function ChooseUs() {
             />
           ))}
         </div>
-        <button
-          className="mx-auto mt-16 cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
-          aria-label="View Gallery of Drip's work"
-        >
-          GET A FREE QUOTE
-        </button>
       </div>
     </section>
   );

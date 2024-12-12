@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { Fade } from "react-awesome-reveal";
+import { useState } from "react";
+
+import SectionInfo from "@/components/SectionInfo";
 
 const photos = [
   {
@@ -124,6 +125,23 @@ function HomeGallery() {
 
   return (
     <section>
+      <SectionInfo
+        header1={"Gallery"}
+        header2={"Vivid Visions: Our Work Speaks for Itself"}
+        animate={true}
+        cascade={true}
+        direction={"up"}
+        textAlign="md:text-center"
+        textWidth="max-w-2xl"
+      >
+        Discover the artistry that sets Drip Painting apart. With over 15 years
+        of experience, we bring spaces to life through stunning interior
+        transformations, bold exterior makeovers, and custom finishes tailored
+        to your vision. From enhancing curb appeal to creating warm, inviting
+        interiors, our work showcases the care and precision we bring to every
+        project. Explore our gallery and see how we’ve made an impact across the
+        Doylestown, PA area—your dream space starts here.
+      </SectionInfo>
       {/* Buttons */}
       <div className="mx-auto flex max-w-[80rem] flex-wrap items-center justify-center py-4 md:py-8">
         <button

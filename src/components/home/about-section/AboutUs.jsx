@@ -6,8 +6,16 @@ import SectionInfo from "@/components/SectionInfo";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";
 function AboutUs() {
   return (
-    <section className="space-y-6 overflow-hidden bg-gradient-to-b from-orange-200 from-5% to-white to-70% px-4 py-16 md:pb-16 md:pt-24">
-      <div className="m-auto max-w-[80rem] gap-6 space-y-6 md:flex md:justify-between md:space-y-0">
+    <section className="relative space-y-6 overflow-hidden bg-gradient-to-b from-orange-300 from-5% to-orange-50 to-70% px-4 py-16">
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 right-1/2 z-0 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-gradient-to-b from-orange-200 from-5% to-white to-70% shadow-xl shadow-orange-500/10 ring-1 ring-orange-200 sm:-mr-80 lg:-mr-96"
+      />
+
+      <div
+        style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 0" }}
+        className="m-auto max-w-[80rem] gap-6 space-y-6 md:flex md:justify-between md:space-y-0"
+      >
         <SectionInfo
           header1={"WHO WE ARE"}
           header2={"About Us"}

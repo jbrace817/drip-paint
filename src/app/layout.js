@@ -5,6 +5,9 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
+// nextjs analytics
+import { Analytics } from "@vercel/analytics/react";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
@@ -33,6 +36,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
         <TailwindIndicator />
       </body>
     </html>

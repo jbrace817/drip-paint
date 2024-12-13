@@ -124,9 +124,8 @@ function HomeGallery() {
   }
 
   return (
-    <section>
-      {/* Buttons */}
-      <div className="mx-auto flex max-w-[80rem] flex-wrap items-end px-4 py-4 md:py-8 lg:justify-between">
+    <section style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 1rem" }}>
+      <div className="mx-auto flex max-w-[80rem] flex-wrap items-end lg:justify-between">
         <div className="md:w-full lg:max-w-lg">
           <SectionInfo
             header1={"Gallery"}
@@ -138,6 +137,7 @@ function HomeGallery() {
             textWidth="max-w-full"
           ></SectionInfo>
         </div>
+        {/* Buttons */}
         <div className="mx-auto flex flex-wrap justify-center pb-8 lg:mx-0">
           <button
             type="button"
@@ -207,9 +207,9 @@ function HomeGallery() {
           ))}
         </div>
       </div>
-      <div className="mx-auto mb-16 flex max-w-[80rem] justify-center">
+      <div className="mx-auto flex max-w-[80rem] justify-center">
         <button
-          className="mx-auto mt-16 cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
+          className="mx-auto cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
           aria-label="View Gallery of Drip's work"
         >
           GET A FREE QUOTE

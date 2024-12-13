@@ -9,11 +9,22 @@ import ConditionalAnimation from "@/utils/ConditionalAnimation";
 
 function Services() {
   const { width } = useViewport();
+  const button = (
+    <button
+      className="mb-8 mt-16 cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-lg font-bold text-orange-950 transition hover:bg-orange-600 md:mb-0 md:mt-0"
+      aria-label="View Gallery of Drip's work"
+    >
+      OUR WORK
+    </button>
+  );
 
   return (
-    <section className="overflow-hidden bg-stone-900 px-4 py-16">
+    <section
+      style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 1rem" }}
+      className="overflow-hidden bg-stone-900"
+    >
       <div className="m-auto max-w-[80rem] md:flex md:flex-row-reverse md:justify-between md:gap-6">
-        <div>
+        <div className="flex flex-col justify-between">
           <SectionInfo
             header1={"WHAT WE DO"}
             header2={"Services"}
@@ -30,20 +41,15 @@ function Services() {
               vision, our attention to detail and craftsmanship ensure stunning,
               long-lasting results every time.
             </p>
-            <button
-              className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] text-lg font-bold text-orange-950 transition hover:bg-orange-600"
-              aria-label="View Gallery of Drip's work"
-            >
-              View Gallery
-            </button>
           </SectionInfo>
+          {width >= 640 && button}
         </div>
         <div className="flex flex-col gap-4 md:w-[50%] md:flex-row">
           <ConditionalAnimation
             animate={true}
             direction={width >= 640 ? "left" : "right"}
             delay={width >= 640 ? 500 : 0}
-            className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
+            className="relative h-[60vw] w-full md:h-full md:max-h-[28rem] md:max-w-[50vw] lg:h-[50vw]"
           >
             <div className="relative h-full w-full">
               {/* Overlay */}
@@ -64,7 +70,7 @@ function Services() {
             animate={true}
             direction={"left"}
             delay={width >= 640 ? 250 : 0}
-            className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
+            className="relative h-[60vw] w-full md:h-full md:max-h-[28rem] md:max-w-[50vw]"
           >
             <div className="relative h-full w-full">
               {/* Overlay */}
@@ -84,7 +90,7 @@ function Services() {
           <ConditionalAnimation
             animate={true}
             direction={width >= 640 ? "left" : "right"}
-            className="relative h-[60vw] w-full md:h-[50vw] md:max-h-[28rem] md:max-w-[50vw]"
+            className="relative h-[60vw] w-full md:h-full md:max-h-[28rem] md:max-w-[50vw]"
           >
             <div className="relative h-full w-full">
               {/* Overlay */}
@@ -101,6 +107,7 @@ function Services() {
               />
             </div>
           </ConditionalAnimation>
+          {width < 640 && button}
         </div>
       </div>
     </section>

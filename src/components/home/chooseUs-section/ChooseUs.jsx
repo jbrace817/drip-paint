@@ -38,8 +38,8 @@ const cardContents = [
 
 function ChooseUs() {
   return (
-    <section>
-      <div className="relative mx-auto flex min-h-screen max-w-[80rem] flex-col items-center bg-white px-4 py-16 font-sans md:min-h-fit">
+    <section style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 1rem" }}>
+      <div className="relative mx-auto flex min-h-screen max-w-[80rem] flex-col items-center bg-white font-sans md:min-h-fit">
         <SectionInfo
           header1={"WHY CHOOSE US"}
           header2={"Excellence You Can Trust, Results You'll Love"}

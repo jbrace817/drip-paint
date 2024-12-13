@@ -6,19 +6,7 @@ import FootLogo from "../../app/assets/footer/logo_white.svg";
 function Footer() {
   return (
     <footer className="bg-stone-900">
-      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div>
-          <Link href="/" aria-label="Home">
-            <Image
-              src={FootLogo}
-              width={0}
-              unoptimized
-              className="mx-auto w-60"
-              alt="Drip Company Logo"
-            />
-          </Link>
-        </div>
-
+      <div className="mx-auto max-w-5xl px-4 pt-16 sm:px-6 lg:px-8">
         <ul className="mt-12 flex flex-wrap justify-center gap-6 font-body md:gap-8 lg:gap-12">
           <li className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
             <Link href={"/about"}>About Us</Link>
@@ -45,8 +33,19 @@ function Footer() {
             <Link href={"/contact"}>Contact Us</Link>
           </li>
         </ul>
+        <div className="mt-16">
+          <Link href="/" aria-label="Home">
+            <Image
+              src={FootLogo}
+              width={0}
+              unoptimized
+              className="mx-auto w-60"
+              alt="Drip Company Logo"
+            />
+          </Link>
+        </div>
 
-        <ul className="mt-12 flex justify-center gap-6 md:gap-8">
+        <ul className="mt-16 flex justify-center gap-6 md:gap-8">
           <li>
             <a
               href="#"
@@ -114,11 +113,10 @@ function Footer() {
             </a>
           </li>
         </ul>
-
-        <p className="mt-8 text-center text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
-          &#xA9;2024 Drip Painting LLC
-        </p>
       </div>
+      <p className="mx-4 mt-8 border-t-[1px] border-gray-700 py-4 text-center text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75">
+        &#xA9;2024 Drip Painting LLC
+      </p>
     </footer>
   );
 }

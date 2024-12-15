@@ -25,7 +25,10 @@ function Hero() {
     src: hero_m,
   });
   return (
-    <section className="relative flex min-h-screen items-center px-4">
+    <section
+      className="relative flex min-h-screen items-center px-4"
+      style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 1rem" }}
+    >
       {/* Full-Height Image Background */}
       <figure className="absolute inset-0 h-full w-full">
         <picture>

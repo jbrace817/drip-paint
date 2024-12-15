@@ -1,7 +1,7 @@
 import Image from "next/image";
 import front from "../../../../public/assets/home/about/aboutUsFront.webp";
 import back from "../../../../public/assets/home/about/aboutUsBack.webp";
-
+import { RiDoubleQuotesL } from "react-icons/ri";
 import SectionInfo from "@/components/SectionInfo";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";
 function AboutUs() {
@@ -16,7 +16,7 @@ function AboutUs() {
       />
 
       <div className="m-auto max-w-[80rem] gap-6 lg:flex lg:justify-between lg:space-y-0">
-        <div className="z-10">
+        <div className="z-10 md:flex md:flex-col">
           <SectionInfo
             header1={"WHO WE ARE"}
             header2={"About Us"}
@@ -24,7 +24,8 @@ function AboutUs() {
             cascade={true}
             direction={"left"}
             textAlign="text-left "
-            textWidth="md:max-w-full lg:max-w-sm"
+            textWidth="max-w-xl"
+            marginAuto={false}
           >
             With over 15 years of experience, Drip Painting delivers expert
             interior and exterior painting services across Bucks and Montgomery
@@ -34,15 +35,24 @@ function AboutUs() {
             finishes, we bring passion and expertise to every project, making
             your home look its best inside and out.
           </SectionInfo>
-          <ConditionalAnimation animate={true} fraction={1}>
-            <figure className="mb-16 mt-8 border-l border-orange-600 pl-8 font-body text-current">
-              <blockquote className="text-xl/8 font-semibold tracking-tight md:max-w-sm">
+          <ConditionalAnimation
+            animate={true}
+            fraction={1}
+            className="flex sm:justify-end lg:justify-start"
+          >
+            <figure className="md: mb-16 mt-8 border-l border-orange-600 pl-8 font-body text-current sm:justify-self-end lg:justify-self-auto">
+              <blockquote className="relative max-w-md text-xl/8 font-semibold tracking-tight">
+                <RiDoubleQuotesL
+                  className="absolute -left-8 -top-5 -z-10 -skew-x-[14deg]"
+                  size={"3.5rem"}
+                  color="#ea580c"
+                  opacity={0.4}
+                />
                 <p>
-                  “I started Drip Painting over 15 years ago with a simple favor
+                  I started Drip Painting over 15 years ago with a simple favor
                   for a neighbor. Seeing their joy inspired me to turn my
                   passion for transforming spaces into a business. Serving the
-                  Doylestown, PA area has been an incredible journey ever
-                  since.”
+                  Doylestown, PA area has been an incredible journey ever since.
                 </p>
               </blockquote>
               <figcaption className="mt-8 flex gap-x-4">

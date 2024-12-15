@@ -1,6 +1,4 @@
 import Image from "next/image";
-import front from "../../../../public/assets/home/about/aboutUsFront.webp";
-import back from "../../../../public/assets/home/about/aboutUsBack.webp";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import SectionInfo from "@/components/SectionInfo";
 import ConditionalAnimation from "@/utils/ConditionalAnimation";

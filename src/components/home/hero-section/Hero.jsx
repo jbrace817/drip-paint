@@ -25,17 +25,15 @@ function Hero() {
     src: hero_m,
   });
   return (
-    <section className="relative min-h-screen sm:min-h-fit">
-      {/* Image */}
-      <figure className="relative w-full">
-        {/* <Image src={hero_m} alt="front of residential home" priority /> */}
+    <section className="relative flex min-h-screen items-center px-4">
+      {/* Full-Height Image Background */}
+      <figure className="absolute inset-0 h-full w-full">
         <picture>
           <source media="(min-width: 768px)" srcSet={desktop} />
           <source media="(min-width: 0px)" srcSet={mobile} />
           <img
             {...rest}
-            // style={{ width: "100%", height: "auto", objectFit: "cover" }}
-            className="h-screen w-full object-cover tallOrWideAndLandscape:h-auto"
+            className="h-full w-full object-cover"
             alt="Exterior of residential work"
           />
         </picture>
@@ -45,28 +43,33 @@ function Hero() {
         {/* Overlay */}
         <div className="absolute inset-0 z-[2] bg-white/60 md:bg-transparent md:bg-gradient-to-r md:from-white/80 md:from-25% md:to-transparent md:to-70% lg:to-60%" />
       </figure>
-      <div className="absolute inset-0 left-0 z-10 mx-4 flex h-screen flex-col justify-around sm:h-full md:mt-[14vw] md:max-w-[80rem] md:justify-start md:space-y-6 md:bg-none xl:mx-auto xl:mt-[10vw] xl:block xl:pl-4">
-        <div className="space-y-6 pt-10 md:pt-0">
-          <h2 className="font-headings text-xl font-bold text-orange-600 md:font-bold">
-            BRING NEW LIFE TO YOUR SPACE
-          </h2>
-          <h1 className="max-w-sm font-headings text-4xl font-bold text-black">
-            Book Your Free Consultation with Bucks & Montgomery’s Trusted
-            Painters!
-          </h1>
+      {/* Content Section */}
+      <div className="relative z-10 flex h-[60vh] w-full flex-col gap-10 md:max-w-[80rem] xl:mx-auto landscape:mt-6 landscape:h-auto">
+        <div className="mb-4 max-w-md space-y-6 lg:max-w-lg">
+          <div>
+            <p className="font-headings text-lg font-semibold text-orange-600 md:font-bold">
+              BRING NEW LIFE TO YOUR SPACE
+            </p>
 
-          <p className="max-w-md font-body text-lg font-medium text-stone-700 md:text-lg">
-            Drip Painting transforms homes in Bucks and Montgomery Counties with
-            quality work, custom finishes, and transparent pricing. Our licensed
-            and insured team is ready to bring your vision to life. Schedule
-            your free consultation today!
-          </p>
+            <h1 className="text-pretty font-headings text-4xl font-semibold tracking-tight text-gray-900 lg:text-5xl">
+              Expert Painting, Remarkable Transformations
+            </h1>
+          </div>
+          <div className="space-y-4">
+            <p className="text-pretty font-body text-xl font-medium text-stone-700 sm:text-xl/8 md:text-lg">
+              Drip Painting delivers exceptional craftsmanship with a focus on
+              quality and care. Serving Bucks and Montgomery Counties, our
+              licensed and insured team specializes in custom finishes that
+              elevate your home. Schedule your free consultation today and bring
+              your vision to life!
+            </p>
+          </div>
         </div>
         <button
           className="cursor-pointer self-start rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-600"
           aria-label="Get a free quote from Drip Painting"
         >
-          GET A FREE QUOTE
+          SCHEDULE NOW <span aria-hidden="true">→</span>
         </button>
       </div>
     </section>

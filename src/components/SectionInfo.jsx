@@ -10,6 +10,7 @@ function SectionInfo({
   direction,
   textAlign = "",
   textWidth = "",
+  marginAuto = true,
 }) {
   return (
     <article>
@@ -20,12 +21,12 @@ function SectionInfo({
           direction={direction}
         >
           <h2
-            className={`font-headings text-xl font-bold text-orange-600 ${textAlign}`}
+            className={`font-headings text-base/7 font-semibold text-orange-600 ${textAlign}`}
           >
             {header1}
           </h2>
           <h3
-            className={`font-headings text-4xl font-bold ${textColor} ${textAlign}`}
+            className={`font-headings text-4xl font-bold sm:text-5xl ${textColor} ${textAlign}`}
           >
             {header2}
           </h3>
@@ -33,7 +34,7 @@ function SectionInfo({
       </header>
 
       <div
-        className={`pb-8 font-body text-lg ${textColor} mx-auto ${textAlign} ${textWidth ? textWidth : "md:max-w-sm lg:max-w-md"}`}
+        className={`pb-8 font-body text-lg/8 ${textColor} ${marginAuto ? "mx-auto" : "mx-0"} ${textAlign} ${textWidth ? textWidth : "md:max-w-sm lg:max-w-md"}`}
       >
         <ConditionalAnimation
           animate={animate}

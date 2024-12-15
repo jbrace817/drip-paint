@@ -15,9 +15,9 @@ module.exports = {
         headings: ["var(--font-montserrat-header)"],
         body: ["var(--font-roboto-body)"],
       },
-      screens: {
-        tallOrWideAndLandscape: {
-          raw: `only screen and ( (max-height: 480px) and (max-width: 960px)) and (orientation: landscape)`,
+      variants: {
+        extend: {
+          display: ["landscape"], //Landscape variant for display or other utilities.
         },
       },
     },

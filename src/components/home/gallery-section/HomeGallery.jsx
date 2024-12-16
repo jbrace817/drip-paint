@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import SectionInfo from "@/components/SectionInfo";
+import Image from "next/image";
 
 const photos = [
   {
@@ -9,108 +10,144 @@ const photos = [
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969300/white_sutd89.webp",
     alt: "Exterior white house  photo",
+    sizes:
+      "(min-width: 2000px) 21.5vw, (min-width: 1400px) 405px, (min-width: 780px) 29.5vw, calc(50vw - 40px)",
   },
   {
     id: 2,
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969296/deck_gray_wfixen.webp",
     alt: "Exterior back of home photo",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 3,
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969299/pink_jbczpk.webp",
     alt: "Exterior pink home photo",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 4,
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969297/green_wpawfv.webp",
     alt: "Exterior green home photo",
+    sizes:
+      "(min-width: 2000px) 29.7vw, (min-width: 1400px) 552px, (min-width: 780px) 40.5vw, calc(68.26vw - 54px)",
   },
   {
     id: 5,
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969294/back_cihkoa.webp",
     alt: "Exterior back of home photo",
+    sizes:
+      "(min-width: 2000px) 28.7vw, (min-width: 1400px) 541px, (min-width: 780px) 39.33vw, calc(66.52vw - 53px)",
   },
   {
     id: 6,
     category: "exterior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733969295/blue_rooxkm.webp",
     alt: "Exterior blue home photo",
+    sizes:
+      "(min-width: 2000px) 24.2vw, (min-width: 1400px) 461px, (min-width: 780px) 33.33vw, calc(56.52vw - 45px)",
   },
   {
     id: 7,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974929/SittingRoom2_kpsjqb.webp",
     alt: "Interior sitting room photo",
+    sizes:
+      "(min-width: 2000px) 24.2vw, (min-width: 1400px) 461px, (min-width: 780px) 33.33vw, calc(56.52vw - 45px)",
   },
   {
     id: 8,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974927/sittingRoom_f8lrpz.webp",
     alt: "Interior sitting room photo",
+    sizes:
+      "(min-width: 2000px) 28.6vw, (min-width: 1400px) 539px, (min-width: 780px) 39.17vw, calc(66.09vw - 51px)",
   },
   {
     id: 9,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974926/OpenPlan_lzuwft.webp",
     alt: "Interior open plan living area photo",
+    sizes:
+      "(min-width: 2000px) 28.8vw, (min-width: 1380px) 540px, (min-width: 780px) 40.86vw, calc(66.74vw - 52px)",
   },
   {
     id: 10,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974924/formal_vlqekq.webp",
     alt: "Interior formal area photo",
+    sizes:
+      "(min-width: 2000px) 24.2vw, (min-width: 1400px) 461px, (min-width: 780px) 33.33vw, calc(56.52vw - 45px)",
   },
   {
     id: 11,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974922/dressingRoom_ym9c0v.webp",
     alt: "Interior dressing room photo",
+    sizes:
+      "(min-width: 2000px) 21.5vw, (min-width: 1400px) 405px, (min-width: 780px) 29.5vw, calc(50vw - 40px)",
   },
   {
     id: 12,
     category: "interior",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974921/dining_jyqngx.webp",
     alt: "Interior dining room photo",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 13,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974979/kitchen_dkugwy.webp",
     alt: "custom painted kitchen photo",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 14,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974977/HomeOffice_iheijf.webp",
     alt: "custom painted home office photo",
+    sizes:
+      "(min-width: 2000px) 28.9vw, (min-width: 1400px) 540px, (min-width: 780px) 39.67vw, calc(66.74vw - 52px)",
   },
   {
     id: 15,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974975/grandStaircase_kyqdoj.webp",
     alt: "custom painted grand staircase",
+    sizes:
+      "(min-width: 2000px) 24.2vw, (min-width: 1400px) 461px, (min-width: 780px) 33.33vw, calc(56.52vw - 45px)",
   },
   {
     id: 16,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974973/garage_mjgfmn.webp",
     alt: "custom painted 3 car garage photo",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 17,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974971/fireplace_lhn2cm.webp",
     alt: "custom painted living room with fireplace and shelves",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
   {
     id: 18,
     category: "custom",
     src: "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733974970/bathroom_pet3cs.webp",
     alt: "custom painted bathrrom",
+    sizes:
+      "(min-width: 2000px) 24.3vw, (min-width: 1400px) 456px, (min-width: 780px) 33.17vw, calc(56.09vw - 43px)",
   },
 ];
 
@@ -196,10 +233,12 @@ function HomeGallery() {
                     className="relative aspect-[4/3] h-full w-full"
                     key={photo.id}
                   >
-                    <img
+                    <Image
                       className="absolute inset-0 h-full w-full rounded-lg object-cover"
                       src={photo.src}
                       alt={photo.alt}
+                      fill
+                      sizes={photo.sizes}
                     />
                   </div>
                 ))}

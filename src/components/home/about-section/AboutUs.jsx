@@ -54,8 +54,10 @@ function AboutUs() {
                 </p>
               </blockquote>
               <figcaption className="mt-8 flex gap-x-4">
-                <img
-                  alt=""
+                <Image
+                  width={512}
+                  height={512}
+                  alt="Floyd Miles"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   className="mt-1 size-10 flex-none rounded-full bg-gray-50"
                 />
@@ -75,13 +77,11 @@ function AboutUs() {
             className="relative z-10 col-start-1 col-end-13 row-start-1 row-end-4 lg:-mt-8"
           >
             <Image
-              src={
-                "https://res.cloudinary.com/dsjx8ner3/image/upload/v1733885002/samples/imagecon-group.jpg"
-              }
+              src="https://res.cloudinary.com/dsjx8ner3/image/upload/v1733885002/samples/imagecon-group.jpg"
               alt="drip company photo"
               width={1920} // Original largest image width
               height={1280} // Original largest image height
-              sizes="(min-width: 2000px) 34vw, (min-width: 1400px) 640px, (min-width: 780px) calc(44.33vw + 28px), calc(100vw - 32px)" // Define widths based on viewport size
+              sizes="(min-width: 2000px) 34vw, (min-width: 1400px) 640px, (min-width: 1040px) calc(40vw + 88px), calc(100vw - 32px)"
             />
           </ConditionalAnimation>
         </div>

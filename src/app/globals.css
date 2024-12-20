@@ -25,3 +25,211 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* ==============================
+   Services
+   ============================== */
+
+.services-tabs {
+  display: block;
+  margin: 0;
+  padding: 0 calc(40px + var(--services-text-overlap)) 0 0;
+  border: none;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.037em;
+}
+.services-tabs > li {
+  display: block;
+  margin-bottom: 0.175em;
+}
+.services-tabs > li > a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.06em;
+  text-decoration: none;
+  opacity: 0.27;
+  transition: var(--transition-default);
+}
+.services-tabs > li > a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: all 0.5s cubic-bezier(0, 0, 0.58, 1);
+}
+.services-tabs > li a:hover {
+  color: unset;
+  opacity: 0.5;
+}
+.services-tabs > li a.active:before {
+  transform: scaleX(1);
+}
+.services-tabs > li > a > .number {
+  position: absolute;
+  top: 0.8em;
+  left: calc(100% + 0.5em);
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 0;
+  transform: translateX(5px);
+  transition: var(--transition-default);
+}
+.services-tabs > li a.active {
+  opacity: 1;
+}
+.services-tabs > li a.active > .number {
+  opacity: 1;
+  transform: translateX(0);
+}
+.services-content {
+  display: flex;
+  width: 100%;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.services-content-item.active .services-text {
+  animation: services-tabs-animation-2 0.7s var(--ease-out-long);
+  will-change: transform;
+}
+
+.services-content-item {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  transition: var(--transition-default);
+}
+img.services-image {
+  position: relative;
+}
+@keyframes services-tabs-animation-1 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.services-content-item.active img.services-image {
+  animation: services-tabs-animation-1 0.7s var(--ease-out-long);
+}
+
+:root {
+  --services-text-overlap: 220px;
+}
+.services-text {
+  position: absolute;
+  bottom: 60px;
+
+  max-width: 410px;
+  z-index: 1;
+}
+.services-text-container {
+  padding: 50px;
+  background: var(--color-gray-light-1);
+}
+@keyframes services-tabs-animation-2 {
+  0% {
+    transform: translate(0, 20px) scale(0.93);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+.services-content-item.active .services-text {
+  animation: services-tabs-animation-2 0.7s var(--ease-out-long);
+  will-change: transform;
+}
+.services-title {
+  margin-bottom: 0.575em;
+  letter-spacing: -0.01em;
+}
+.services-text .text-gray {
+  color: var(--color-dark-4);
+}
+
+.light-content .services-tabs > li > a {
+  color: #fff;
+  opacity: 0.4;
+  transform: translateZ(0);
+}
+.light-content .services-tabs > li a:hover {
+  opacity: 0.7;
+}
+.light-content .services-tabs > li > a.active {
+  opacity: 1;
+}
+.light-content .services-text-container {
+  background: #272727;
+}
+.light-content .services-text .text-gray {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media only screen and (max-width: 1536px) {
+  .services-tabs {
+    font-size: calc(1.194rem + 1.53vw);
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .services-text {
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  img.services-image {
+    align-self: flex-end;
+    width: 60%;
+    max-width: 520px;
+    margin: 0 0 0 35%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .services-text {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .services-content-item {
+    min-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .services-text-container {
+    padding: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  img.services-image {
+    max-width: unset;
+    width: 100%;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .services-text {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}

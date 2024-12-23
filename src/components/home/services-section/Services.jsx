@@ -3,33 +3,40 @@ import SectionInfo from "@/components/SectionInfo";
 import Image from "next/image";
 import serviceList from "./serviceList";
 import { useState } from "react";
+import ConditionalAnimation from "@/utils/ConditionalAnimation";
 
-function ServiceContent({ name, imageAlt, imageSrc, description }) {
+function ServiceContent({
+  name,
+  imageAlt,
+  imageSrc,
+  description,
+  active,
+  directionRight,
+}) {
+  console.log(active === name);
   return (
     <div
-      className="wow fadeInLeft flex w-full px-2 lg:w-6/12"
+      className="px-2 md:w-full lg:w-6/12"
       data-wow-delay="0.55s"
       data-wow-offset={275}
     >
-      <div className="tab-content services-content">
+      <div className={`w-full md:w-auto`}>
         {/* Tab Content */}
-        <div
-          className="tab-pane services-content-item show fade active"
-          id="services-item-1"
-          role="tabpanel"
-        >
-          <div className="services-text lg:left-[calc(-1*220px)]">
-            <div className="services-text-container mx-auto">
-              <h4 className="services-title text-2xl font-medium text-white">
+        <div className={`relative justify-end md:flex`} id="" role="tabpanel">
+          <div className="bottom-0 md:absolute md:right-[26.25rem] md:z-10 md:max-w-xl lg:-bottom-14 lg:left-[calc(-1*180px)] lg:right-0 lg:max-w-sm xl:bottom-0">
+            <div className="mx-auto mb-3 bg-stone-800 p-7">
+              <h4 className="mb-[.575em] font-headings text-xl font-medium text-white">
                 {name}
               </h4>
-              <p className="text-gray mb-0">{description}</p>
+              <p className="mb-0 font-body text-base font-normal text-stone-400">
+                {description}
+              </p>
             </div>
           </div>
           <Image
             width={945}
             height={1016}
-            className="services-image"
+            className="md:max-w-[32.5rem]"
             src={imageSrc}
             alt={imageAlt}
           />
@@ -64,7 +71,9 @@ function ServicesList({ id, index, name, onClick, active }) {
 
 function Services() {
   const [activeService, setActiveService] = useState("Exterior");
+  const [directionRight, setDirectionRight] = useState("right");
   function handleClick(name) {
+    setDirectionRight("");
     setActiveService(name);
   }
   return (
@@ -108,6 +117,7 @@ function Services() {
             ))}
           </ul>
         </div>
+
         {serviceList
           .filter((service) => activeService === service.name)
           .map((service) => (
@@ -117,6 +127,8 @@ function Services() {
               description={service.description}
               imageAlt={service.imageAlt}
               imageSrc={service.imageSrc}
+              active={activeService}
+              directionRight={directionRight}
             />
           ))}
       </div>

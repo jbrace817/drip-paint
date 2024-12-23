@@ -26,13 +26,21 @@ function ServiceContent({
         <div className={`w-full md:w-auto`}>
           {/* Tab Content */}
           <div className={`relative md:flex md:justify-end`} role="tabpanel">
-            <div className="bottom-0 md:absolute md:right-[26.25rem] md:z-10 md:max-w-xl lg:-bottom-14 lg:left-[calc(-1*180px)] lg:right-0 lg:max-w-sm xl:bottom-0">
+            <div className="bottom-0 md:absolute md:right-[26.25rem] md:z-10 md:max-w-xl lg:-bottom-24 lg:left-[calc(-1*180px)] lg:right-0 lg:max-w-sm xl:bottom-0">
               <div className="mx-auto mb-3 bg-stone-800 p-7">
-                <h4 className="mb-[.575em] font-headings text-xl font-medium text-white">
+                <h4 className="mb-[.575em] font-headings text-2xl font-medium text-white">
                   {name}
                 </h4>
-                <p className="mb-0 font-body text-base font-normal text-stone-400">
+                <p className="mb-0 font-body text-lg font-normal text-stone-400">
                   {description}
+                </p>
+                <p className="mt-6">
+                  <a
+                    href={"#"}
+                    className="text-md/6 font-semibold text-orange-600"
+                  >
+                    Learn more <span aria-hidden="true">→</span>
+                  </a>
                 </p>
               </div>
             </div>
@@ -54,7 +62,10 @@ function ServiceContent({
 function ServicesList({ id, name, onClick, active }) {
   return (
     <>
-      <ul className="nav nav-tabs services-tabs font-headings" role="tablist">
+      <ul
+        className="nav nav-tabs services-tabs font-headings 2xl:text-[calc(1.194rem+1.53vw)]"
+        role="tablist"
+      >
         <li role="presentation">
           <a
             href={`#services-item-${id}`}
@@ -92,6 +103,7 @@ function Services() {
               animate={true}
               cascade={true}
               marginAuto={false}
+              textWidth="md:max-w-xl lg:max-w-md"
             >
               <p>
                 At Drip Painting, we specialize in bringing homes to life with
@@ -105,22 +117,18 @@ function Services() {
           </div>
 
           {/* Service Tabs */}
-          <ul
-            className="nav nav-tabs services-tabs font-headings"
-            role="tablist"
-          >
-            {serviceList.map((service) => (
-              <ServicesList
-                name={service.name}
-                id={service.id}
-                onClick={handleClick}
-                active={activeService}
-                key={service.id}
-              />
-            ))}
-          </ul>
+          {serviceList.map((service) => (
+            <ServicesList
+              name={service.name}
+              id={service.id}
+              onClick={handleClick}
+              active={activeService}
+              key={service.id}
+            />
+          ))}
         </div>
 
+        {/* Service Content */}
         {serviceList
           .filter((service) => activeService === service.name)
           .map((service) => (

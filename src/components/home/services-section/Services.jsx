@@ -10,51 +10,55 @@ function ServiceContent({
   imageAlt,
   imageSrc,
   description,
-  active,
   directionRight,
 }) {
-  console.log(active === name);
   return (
     <div
       className="px-2 md:w-full lg:w-6/12"
       data-wow-delay="0.55s"
       data-wow-offset={275}
     >
-      <div className={`w-full md:w-auto`}>
-        {/* Tab Content */}
-        <div className={`relative justify-end md:flex`} id="" role="tabpanel">
-          <div className="bottom-0 md:absolute md:right-[26.25rem] md:z-10 md:max-w-xl lg:-bottom-14 lg:left-[calc(-1*180px)] lg:right-0 lg:max-w-sm xl:bottom-0">
-            <div className="mx-auto mb-3 bg-stone-800 p-7">
-              <h4 className="mb-[.575em] font-headings text-xl font-medium text-white">
-                {name}
-              </h4>
-              <p className="mb-0 font-body text-base font-normal text-stone-400">
-                {description}
-              </p>
+      <ConditionalAnimation
+        animate={true}
+        cascade={directionRight === "right" ? true : false}
+        direction={directionRight}
+      >
+        <div className={`w-full md:w-auto`}>
+          {/* Tab Content */}
+          <div className={`relative md:flex md:justify-end`} role="tabpanel">
+            <div className="bottom-0 md:absolute md:right-[26.25rem] md:z-10 md:max-w-xl lg:-bottom-14 lg:left-[calc(-1*180px)] lg:right-0 lg:max-w-sm xl:bottom-0">
+              <div className="mx-auto mb-3 bg-stone-800 p-7">
+                <h4 className="mb-[.575em] font-headings text-xl font-medium text-white">
+                  {name}
+                </h4>
+                <p className="mb-0 font-body text-base font-normal text-stone-400">
+                  {description}
+                </p>
+              </div>
             </div>
+            <Image
+              width={945}
+              height={1016}
+              className="md:max-w-[32.5rem]"
+              src={imageSrc}
+              alt={imageAlt}
+            />
           </div>
-          <Image
-            width={945}
-            height={1016}
-            className="md:max-w-[32.5rem]"
-            src={imageSrc}
-            alt={imageAlt}
-          />
+          {/* End Tab Content */}
         </div>
-        {/* End Tab Content */}
-      </div>
+      </ConditionalAnimation>
     </div>
   );
 }
 
-function ServicesList({ id, index, name, onClick, active }) {
+function ServicesList({ id, name, onClick, active }) {
   return (
     <>
       <ul className="nav nav-tabs services-tabs font-headings" role="tablist">
         <li role="presentation">
           <a
-            href={`#services-item-${index + 1}`}
-            aria-controls={`services-item-${index + 1}`}
+            href={`#services-item-${id}`}
+            aria-controls={`services-item-${id}`}
             role="tab"
             className={active === name ? "active" : ""}
             aria-selected={active === name ? "true" : "false"}
@@ -105,11 +109,10 @@ function Services() {
             className="nav nav-tabs services-tabs font-headings"
             role="tablist"
           >
-            {serviceList.map((service, index) => (
+            {serviceList.map((service) => (
               <ServicesList
                 name={service.name}
                 id={service.id}
-                index={index}
                 onClick={handleClick}
                 active={activeService}
                 key={service.id}
@@ -127,7 +130,7 @@ function Services() {
               description={service.description}
               imageAlt={service.imageAlt}
               imageSrc={service.imageSrc}
-              active={activeService}
+              id={service.id}
               directionRight={directionRight}
             />
           ))}

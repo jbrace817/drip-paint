@@ -63,20 +63,37 @@ function ServicesList({ id, name, onClick, active }) {
   return (
     <>
       <ul
-        className="nav nav-tabs services-tabs font-headings 2xl:text-[calc(1.194rem+1.53vw)]"
+        className="m-0 block border-none pr-[40px+200px] font-headings text-[calc(1.194rem+1.53vw)] font-medium leading-[1.1] tracking-[-0.037em] 2xl:text-[calc(1.194rem+1.53vw)]"
         role="tablist"
       >
-        <li role="presentation">
+        <li className="mb-[0.175em] block text-white" role="presentation">
           <a
-            href={`#services-item-${id}`}
+            href="#"
             aria-controls={`services-item-${id}`}
             role="tab"
-            className={active === name ? "active" : ""}
+            style={{ transform: "translateZ(0)" }}
+            className={`relative inline-block pb-[0.06em] text-white decoration-[none] transition-all duration-[0.27s] ease-[cubic-bezier(0,0,0.58,1)] ${
+              active === name
+                ? "opacity-100 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-[left_center] before:scale-x-100 before:bg-white before:transition-transform before:duration-[0.5s] before:ease-[cubic-bezier(0,0,0.58,1)]"
+                : "opacity-40 before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-[left_center] before:scale-x-0 before:bg-current before:transition-transform before:duration-[0.5s] before:ease-[cubic-bezier(0,0,0.58,1)] hover:text-[unset] hover:opacity-60"
+            }`}
             aria-selected={active === name ? "true" : "false"}
             data-bs-toggle="tab"
-            onClick={() => onClick(name)}
+            onClick={(event) => {
+              event.preventDefault(); // Prevent default anchor behavior
+              onClick(name);
+            }}
           >
-            {name} <span className="number">{id}</span>
+            {name}
+            <span
+              className={`absolute left-[calc(100%+0.5em)] top-1/2 inline-block -translate-y-1/2 align-text-top text-base font-bold tracking-[0] transition-all duration-200 ease-[cubic-bezier(0,0.5,0,1)] ${
+                active === name
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-[5px] opacity-0"
+              }`}
+            >
+              {id}
+            </span>
           </a>
         </li>
       </ul>
@@ -93,7 +110,7 @@ function Services() {
   }
   return (
     <section className="overflow-hidden bg-stone-900 px-4 py-[clamp(3.75rem,7.82vw,6.25rem)]">
-      <div className="light-content mx-auto flex max-w-[80rem] flex-wrap">
+      <div className="mx-auto flex max-w-[80rem] flex-wrap">
         <div className="mb-8 w-full px-2 md:mb-16 lg:w-6/12">
           <div className="mb-50 mb-sm-30 -mx-2 flex flex-wrap">
             <SectionInfo

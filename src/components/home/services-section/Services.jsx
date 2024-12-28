@@ -50,6 +50,7 @@ function ServiceContent({
               className="md:max-w-[32.5rem]"
               src={imageSrc}
               alt={imageAlt}
+              sizes="(min-width: 2000px) 27.6vw, (min-width: 780px) 520px, calc(99.78vw - 46px)"
             />
           </div>
           {/* End Tab Content */}

@@ -1,3 +1,4 @@
+import CTA from "@/components/CTA";
 import AboutUs from "@/components/home/about-section/AboutUs";
 import ChooseUs from "@/components/home/chooseUs-section/ChooseUs";
 import HomeGallery from "@/components/home/gallery-section/HomeGallery";
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutUs />
       <Services />
       <ChooseUs />
+      <CTA />
       <HomeGallery />
     </div>
   );

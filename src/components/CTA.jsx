@@ -1,10 +1,9 @@
 import ParallaxContainer from "@/utils/ParallaxContainer";
-import test from "../../public/assets/images/services/section-bg-1.jpg";
 
 function CTA() {
   return (
     <ParallaxContainer
-      image="/assets/home/dripServices/freepik__adjust__93585.png"
+      image="https://res.cloudinary.com/dsjx8ner3/image/upload/v1735734476/freepik__adjust__54031_poocbe.webp"
       speed={0.5}
       className="parallax-5"
     >
@@ -14,23 +13,20 @@ function CTA() {
             <h2 className="text-balance font-headings text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               Transform Your Space with Expert Painting Services
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-pretty font-body text-lg/8 text-gray-300">
+            <p className="mx-auto mt-6 max-w-xl text-pretty font-body text-xl/8 text-white">
               With over 15 years of experience, our skilled team brings life to
               your vision through vibrant interiors, polished exteriors, and
               custom finishes. Your dream space is just a brushstroke away.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 font-body">
-              <a
-                href="#"
-                className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-orange-950 shadow-sm transition hover:hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              <button
+                className="mx-auto cursor-pointer rounded-md bg-orange-500 px-[1em] py-[.75em] font-body text-lg font-bold text-orange-950 transition hover:bg-orange-700"
+                aria-label="View Gallery of Drip's work"
               >
-                FREE QUOTE
-              </a>
-              <a href="#" className="text-sm/6 font-semibold text-white">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+                SCHEDULE TODAY
+              </button>
             </div>
-            <div className="absolute inset-0 -z-10 bg-black opacity-40" />
+            <div className="absolute inset-0 -z-10 bg-black opacity-50" />
           </div>
         </div>
       </div>

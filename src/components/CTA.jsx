@@ -6,6 +6,7 @@ function CTA() {
       image="https://res.cloudinary.com/dsjx8ner3/image/upload/v1735734476/freepik__adjust__54031_poocbe.webp"
       speed={0.5}
       className="parallax-5"
+      alt="Dining room with a large table"
     >
       <div className="relative">
         <div className="px-4 py-[clamp(3.75rem,7.82vw,6.25rem)] sm:px-6 sm:py-32 lg:px-8">

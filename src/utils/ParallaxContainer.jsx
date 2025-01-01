@@ -6,9 +6,8 @@ const jarallax = dynamic(() => import("jarallax").then((mod) => mod.jarallax), {
   ssr: false,
 });
 
-function ParallaxContainer({ image, speed, children }) {
+function ParallaxContainer({ image, speed, children, alt }) {
   const containerRef = useRef(null);
-
   useEffect(() => {
     const initJarallax = async () => {
       if (containerRef.current && jarallax) {
@@ -19,9 +18,7 @@ function ParallaxContainer({ image, speed, children }) {
         });
       }
     };
-
     initJarallax();
-
     return () => {
       if (containerRef.current) {
         const { jarallax } = require("jarallax");
@@ -29,8 +26,11 @@ function ParallaxContainer({ image, speed, children }) {
       }
     };
   }, [image, speed]);
-
-  return <div ref={containerRef}>{children}</div>;
+  return (
+    <div ref={containerRef} aria-label={alt}>
+      {children}
+    </div>
+  );
 }
 
 export default ParallaxContainer;

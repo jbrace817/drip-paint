@@ -27,7 +27,14 @@ function ParallaxContainer({ image, speed, children, alt }) {
     };
   }, [image, speed]);
   return (
-    <div ref={containerRef} aria-label={alt}>
+    <div ref={containerRef} title={alt}>
+      <img
+        src={image}
+        alt={alt}
+        style={{
+          display: "none", // Hidden image for SEO and accessibility
+        }}
+      />
       {children}
     </div>
   );

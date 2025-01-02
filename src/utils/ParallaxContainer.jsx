@@ -1,43 +1,18 @@
-"use client";
-import dynamic from "next/dynamic";
-import { useEffect, useRef } from "react";
+import { jarallax } from "jarallax";
+import { useEffect } from "react";
 
-const jarallax = dynamic(() => import("jarallax").then((mod) => mod.jarallax), {
-  ssr: false,
-});
-
-function ParallaxContainer({ image, speed, children, alt }) {
-  const containerRef = useRef(null);
+export default function ParallaxContainer(props) {
   useEffect(() => {
-    const initJarallax = async () => {
-      if (containerRef.current && jarallax) {
-        const { jarallax } = await import("jarallax");
-        jarallax(containerRef.current, {
-          speed: speed || 0.5,
-          imgSrc: image,
-        });
-      }
-    };
-    initJarallax();
-    return () => {
-      if (containerRef.current) {
-        const { jarallax } = require("jarallax");
-        jarallax(containerRef.current, "destroy");
-      }
-    };
-  }, [image, speed]);
+    jarallax(document.querySelectorAll(".parallax-5"), {
+      speed: 0.5,
+    });
+  }, []);
   return (
-    <div ref={containerRef} title={alt}>
-      <img
-        src={image}
-        alt={alt}
-        style={{
-          display: "none", // Hidden image for SEO and accessibility
-        }}
-      />
-      {children}
+    <div
+      //   ref={parallax.ref}
+      {...props}
+    >
+      {props.children}
     </div>
   );
 }
-
-export default ParallaxContainer;

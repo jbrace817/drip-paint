@@ -5,11 +5,6 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 import { client } from "@/sanity/client";
 
-// const POSTS_QUERY = `*[
-//   _type == "post"
-//   && defined(slug.current)
-// ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt,image, description}`;
-
 const POSTS_QUERY = `*[_type == "post"] |order(publishedAt desc)[0...12] {
   title,
   slug,
@@ -66,27 +61,6 @@ export default async function BlogList() {
   console.log(posts.forEach((post) => console.log(post)));
 
   return (
-    // <main className="container mx-auto min-h-screen max-w-3xl p-8">
-    //   <h1 className="mb-8 text-4xl font-bold">Posts</h1>
-
-    //   <ul className="flex flex-col gap-y-4">
-    //     {posts.map((post) => (
-    //       <li className="hover:underline" key={post._id}>
-    //         <Link href={`./blog/${post.slug.current}`}>
-    //           {post.image && (
-    //             <img
-    //               src={urlFor(post.image)?.width(550).height(310).url()}
-    //               alt={post.title}
-    //             />
-    //           )}
-    //           <h2 className="text-xl font-semibold">{post.title}</h2>
-    //           <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
-    //           <p>{post.description}</p>
-    //         </Link>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </main>
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">

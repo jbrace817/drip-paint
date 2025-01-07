@@ -1,4 +1,8 @@
-import { PortableText, type SanityDocument } from "next-sanity";
+import {
+  PortableText,
+  type SanityDocument,
+  PortableTextComponents,
+} from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
@@ -22,6 +26,28 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
     }
   }`;
 
+const components: PortableTextComponents = {
+  list: {
+    bullet: ({ children }) => <ul className="ml-6 list-disc">{children}</ul>,
+    number: ({ children }) => <ol className="ml-6 list-decimal">{children}</ol>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li>{children}</li>,
+    number: ({ children }) => <li>{children}</li>,
+  },
+  block: {
+    // Handles new line breaks for text blocks
+    normal: ({ children }) => (
+      <p className="whitespace-pre-line text-slate-700">{children}</p>
+    ),
+
+    //Headings
+    h2: ({ children }) => (
+      <h2 className="font-headings text-2xl text-slate-900">{children}</h2>
+    ),
+  },
+};
+
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
   projectId && dataset
@@ -42,7 +68,7 @@ export default async function PostPage({
     options,
   );
   const postImageUrl = post.image
-    ? urlFor(post.image)?.width(550).height(310).url()
+    ? urlFor(post.image)?.width(1920).height(1080).url()
     : null;
 
   console.log(post);
@@ -56,7 +82,7 @@ export default async function PostPage({
           width={1920}
           height={1080}
           sizes="100vw"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-top"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
         />
         <div className="absolute inset-0 -z-10 bg-black opacity-50" />
         <div className="px-4 py-32">
@@ -72,37 +98,30 @@ export default async function PostPage({
       </div>
       {/* Floating Content Section */}
       <div className="relative -mt-16 bg-orange-100 px-4 py-8 font-body">
-        <div className="prose relative z-20 mx-auto max-w-[80rem] rounded bg-white p-9 shadow-lg">
-          <div className="flex max-w-xs divide-x-[1px] divide-slate-300">
-            <p className="pr-4">By: {post.author.name}</p>
-            <p className="pl-4">
-              Published: {new Date(post.publishedAt).toLocaleDateString()}
-            </p>
+        <div className="mx-auto grid max-w-[80rem] gap-5 md:grid-cols-4 lg:gap-4">
+          <div className="prose relative z-20 rounded bg-white p-6 shadow-lg md:col-span-3 lg:p-9">
+            <div className="flex max-w-xs divide-x-[1px] divide-slate-300">
+              <p className="pr-4">By: {post.author.name}</p>
+              <p className="pl-4">
+                Published: {new Date(post.publishedAt).toLocaleDateString()}
+              </p>
+            </div>
+            <article className="mt-4">
+              {Array.isArray(post.body) && (
+                <PortableText components={components} value={post.body} />
+              )}
+            </article>
           </div>
-          <article className="mt-4 max-w-3xl">
-            {Array.isArray(post.body) && <PortableText value={post.body} />}
-          </article>
+          <aside className="z-20 hidden rounded bg-white p-4 shadow-lg md:col-start-4 md:block">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              veritatis optio aut voluptatum quasi dicta? Ullam, tempora alias.
+              Quos nemo esse molestiae hic itaque distinctio est, debitis in
+              atque doloribus!
+            </p>
+          </aside>
         </div>
       </div>
     </main>
-    // <main className="container mx-auto flex min-h-screen max-w-3xl flex-col gap-4 p-8">
-    //   <Link href="/" className="hover:underline">
-    //     ← Back to posts
-    //   </Link>
-    //   {postImageUrl && (
-    //     <img
-    //       src={postImageUrl}
-    //       alt={post.title}
-    //       className="aspect-video rounded-xl"
-    //       width="550"
-    //       height="310"
-    //     />
-    //   )}
-    //   <h1 className="mb-8 text-4xl font-bold">{post.title}</h1>
-    //   <div className="prose">
-    //     <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-    //     {Array.isArray(post.body) && <PortableText value={post.body} />}
-    //   </div>
-    // </main>
   );
 }

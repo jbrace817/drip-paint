@@ -79,23 +79,45 @@ const company = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [navHeight, setNavHeight] = useState(0);
-  const nav = useRef(null);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [isTop, setIsTop] = useState(true); // Track if at the top of the screen
+  const [prevScroll, setPrevScroll] = useState(0);
 
   useEffect(() => {
-    setNavHeight(nav.current.clientHeight);
-  }, []);
+    const SCROLL_THRESHOLD = 10; // Adjust based on sensitivity
 
-  console.log(navHeight);
+    const handleScroll = () => {
+      const currentScroll = Math.max(0, Math.round(window.scrollY));
+
+      // Check if at the top of the screen
+      setIsTop(currentScroll === 0);
+
+      // Toggle visibility only if the scroll difference exceeds the threshold
+      if (Math.abs(currentScroll - prevScroll) > SCROLL_THRESHOLD) {
+        setIsVisible(currentScroll < prevScroll || currentScroll === 0);
+        setPrevScroll(currentScroll);
+      }
+    };
+
+    // Disables scroll when mobile menu is open
+    document.body.style.overflow = `${mobileMenuOpen ? "hidden" : "visible"}`;
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScroll, mobileMenuOpen]);
 
   return (
-    <header className="fixed left-0 top-0 z-[100] w-full bg-white/50 backdrop-blur-md">
+    <header
+      className={`fixed left-0 top-4 z-[100] w-full bg-transparent transition duration-500 ${
+        isVisible ? "translate-y-0" : "-translate-y-[120%]"
+      } `}
+    >
       <nav
         aria-label="Global"
-        ref={nav}
-        className="mx-auto flex max-w-[80rem] items-center justify-between px-4 py-5 xl:px-0"
+        className={`mx-4 flex items-center justify-between rounded-xl px-4 py-4 transition duration-500 xl:mx-auto xl:max-w-[80rem] xl:px-0 ${isTop ? "bg-white" : "bg-white/60 backdrop-blur-md"}`}
       >
-        <div className="flex lg:flex-1">
+        <div className="flex pl-4 lg:flex-1">
           {/* Logo */}
           <Link href="/" aria-label="Home">
             <span className="sr-only">Your Company</span>
@@ -159,7 +181,7 @@ export default function Navbar() {
             )}
           </Popover>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden pr-4 lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>

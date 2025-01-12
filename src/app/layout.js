@@ -33,11 +33,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${roboto.variable} `}>
-        <Navbar />
-        {children}
-        <Footer />
-        <Analytics />
-        <TailwindIndicator />
+        <div>
+          <Navbar />
+          {children}
+          <Footer />
+          <Analytics />
+          <TailwindIndicator />
+        </div>
       </body>
     </html>
   );

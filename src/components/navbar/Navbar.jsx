@@ -70,11 +70,8 @@ const callsToAction = [
   { name: "Contact sales", href: "#", icon: PhoneIcon },
 ];
 const company = [
-  { name: "About us", href: "/about" },
-  { name: "Careers", href: "#" },
-  { name: "Support", href: "#" },
-  { name: "Press", href: "#" },
-  { name: "Blog", href: "#" },
+  { name: "Services", href: "/services" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -141,20 +138,18 @@ export default function Navbar() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Product
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Marketplace
-          </a>
+          <Link
+            href={"/about"}
+            className="text-sm/6 font-semibold text-gray-900"
+          >
+            About Us
+          </Link>
+
           <Popover className="relative">
-            {({ open }) => (
+            {({ open, close }) => (
               <>
                 <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 focus-visible:outline-none">
-                  Company
+                  Explore
                   <ChevronDownIcon
                     aria-hidden="true"
                     className={`size-5 flex-none text-gray-400 transition duration-300 ease-in-out ${
@@ -172,6 +167,7 @@ export default function Navbar() {
                       key={item.name}
                       href={item.href}
                       className="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-gray-900 hover:bg-gray-50"
+                      onClick={close}
                     >
                       {item.name}
                     </Link>
@@ -180,6 +176,18 @@ export default function Navbar() {
               </>
             )}
           </Popover>
+          <Link
+            href={"/contact"}
+            className="text-sm/6 font-semibold text-gray-900"
+          >
+            Contact Us
+          </Link>
+          <Link
+            href={"/projects"}
+            className="text-sm/6 font-semibold text-gray-900"
+          >
+            Projects
+          </Link>
         </PopoverGroup>
         <div className="hidden pr-4 lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm/6 font-semibold text-gray-900">

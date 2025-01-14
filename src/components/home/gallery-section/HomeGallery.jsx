@@ -3,12 +3,9 @@ import { useState } from "react";
 
 import SectionInfo from "@/components/SectionInfo";
 import Image from "next/image";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-
-import NextJsImage from "@/utils/NextJsImage";
+import Lightbox from "react-awesome-lightbox";
+import "react-awesome-lightbox/build/style.css";
 
 const photos = [
   {
@@ -157,14 +154,6 @@ const photos = [
   },
 ];
 
-const slides = photos.map((photo) => ({
-  src: photo.src,
-  width: 1920, // Placeholder width
-  height: 1080, // Placeholder height
-  alt: photo.alt,
-  sizes: photo.sizes,
-}));
-
 function HomeGallery() {
   const [category, setCategory] = useState("exterior");
   const [open, setOpen] = useState(false);
@@ -175,6 +164,11 @@ function HomeGallery() {
       setCategory(newCategory);
     }
   }
+
+  const slides = photos.map((photo) => ({
+    url: photo.src,
+    title: photo.alt,
+  }));
 
   return (
     <section style={{ padding: "clamp(3.75rem, 7.82vw, 6.25rem) 1rem" }}>
@@ -257,7 +251,7 @@ function HomeGallery() {
                       sizes={photo.sizes}
                       onClick={() => {
                         setCurrentIndex(
-                          slides.findIndex((slide) => slide.src === photo.src),
+                          slides.findIndex((slide) => slide.url === photo.src),
                         );
                         setOpen(true);
                       }}
@@ -267,17 +261,6 @@ function HomeGallery() {
             </div>
           ))}
         </div>
-        {/* Lightbox */}
-        <Lightbox
-          open={open}
-          close={() => setOpen(false)}
-          index={currentIndex}
-          slides={slides}
-          render={{
-            slide: (props) => <NextJsImage {...props} />,
-          }}
-          plugins={[Zoom]}
-        />
       </div>
       <div className="mx-auto flex max-w-[80rem] justify-center">
         <button
@@ -287,6 +270,13 @@ function HomeGallery() {
           GET A FREE QUOTE
         </button>
       </div>
+      {open && (
+        <Lightbox
+          images={slides}
+          startIndex={currentIndex}
+          onClose={() => setOpen(false)}
+        />
+      )}
     </section>
   );
 }

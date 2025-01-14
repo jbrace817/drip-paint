@@ -3,6 +3,12 @@ import { useState } from "react";
 
 import SectionInfo from "@/components/SectionInfo";
 import Image from "next/image";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+import NextJsImage from "@/utils/NextJsImage";
 
 const photos = [
   {
@@ -151,8 +157,18 @@ const photos = [
   },
 ];
 
+const slides = photos.map((photo) => ({
+  src: photo.src,
+  width: 1920, // Placeholder width
+  height: 1080, // Placeholder height
+  alt: photo.alt,
+  sizes: photo.sizes,
+}));
+
 function HomeGallery() {
   const [category, setCategory] = useState("exterior");
+  const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   function handleClick(newCategory) {
     if (newCategory !== category) {
@@ -239,12 +255,29 @@ function HomeGallery() {
                       alt={photo.alt}
                       fill
                       sizes={photo.sizes}
+                      onClick={() => {
+                        setCurrentIndex(
+                          slides.findIndex((slide) => slide.src === photo.src),
+                        );
+                        setOpen(true);
+                      }}
                     />
                   </div>
                 ))}
             </div>
           ))}
         </div>
+        {/* Lightbox */}
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          index={currentIndex}
+          slides={slides}
+          render={{
+            slide: (props) => <NextJsImage {...props} />,
+          }}
+          plugins={[Zoom]}
+        />
       </div>
       <div className="mx-auto flex max-w-[80rem] justify-center">
         <button
